@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
+<% String url = application.getContextPath() + "/"; %>
+
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -6,21 +12,23 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.bgimg {
-  background-repeat: repeat;
-  background-size: cover;
-  background-image: url("images/pizza_home.jpg");
-  min-height: 90%;
+#left_banner
+{	
+	position: fixed;
+	width:200px;
+	height:400px;
+	top:300px;
+	right:0%;
+	background-color:#ccff33;
 }
 </style>
 <body class="w3-light-grey">
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Â Menu</button>
   <span class="w3-bar-item w3-right">Logo</span>
 </div>
 
@@ -42,16 +50,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Dashboard</h5>
   </div>
   <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="http://localhost/project_pizzahot/demo1.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
-    <a href="Controller?command=menuAll" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  MENU</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>Â  Close Menu</a>
+     <a href="http://localhost/project_pizzahot/demo1.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="http://localhost/project_pizzahot/demo2.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  MENU</a>
     <a href="http://localhost/project_pizzahot/demo3.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  ABOUT</a>
     <a href="http://localhost/project_pizzahot/demo4.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Contact</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
-    <a href="Controller?command=menuManage" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
   </div>
 </nav>
 
@@ -60,45 +68,50 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="bgimg w3-main" style="margin-left:300px;margin-top:43px; font-family: 'Amatic SC'">
-
-<!-- Header with image -->
-	<div class="w3-display-container" id="home">
-  	<div class="w3-display-bottomleft w3-padding">
-	    <span class="w3-tag w3-xlarge">Open from 10am to 12pm</span>
-  	</div>
-  	<div class="w3-center" style="padding-top: 200px; padding-bottom: 200px">
-	    <span class="w3-text-white w3-hide-small" style="font-size:150px"><b>PIZZAHOT</b></span>
-	    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px;"><b>thin<br>CRUST PIZZA</b></span>
-	    <p><a href="Controller?command=menuAll" class="w3-button w3-xxlarge w3-black">Let me see the menu</a></p>
-  	</div>
-	</div>
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+<div class="w3-display-container w3-center">
+	<table border="1">
+	<thead>
+		<tr>
+			<th>메뉴명</th><th>표시재료</th><th>부연설명</th><th>가격</th><th>카테고리</th><th>삭제</th>
+		</tr>
+	</thead>
+	<c:forEach items="${requestScope.menuAll}" var="data">
+		<tr>
+			<th>${data.name}</th>
+			<th>${data.config}</th>
+			<th>${data.status}</th>
+			<th>${data.price}</th>
+			<th>${data.category}</th>
+			<th><a href="Controller?command=menuDelete&menu=${data.name}">삭제하기</a></th>
+		</tr>
+	</c:forEach>
+	</table>
+	<br>
+	<form action="Controller" method="post">
+	<input type="hidden" name="command" value="menuInsert">
+	<table border="1">
+		<tr>
+			<td>메뉴명</td><td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+	 		<td>표시재료</td><td><input type="text" name="config"></td>
+		</tr>
+		<tr>	
+			<td>부연설명</td><td><input type="text" name="status"></td>
+	 	</tr>
+	 	<tr>
+	 		<td>가격</td><td><input type="text" name="price"></td>
+	 	</tr>
+	 	<tr>
+	 		<td>카테고리</td><td><input type="text" name="category"></td>
+	 	</tr>
+	 	<tr>
+	 		<td colspan="2"><input type="submit" value="등록">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소"></td>
+	 	</tr>
+	</table>
+</form>
 </div>
-
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-    overlayBg.style.display = "none";
-  } else {
-    mySidebar.style.display = 'block';
-    overlayBg.style.display = "block";
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
-}
-</script>
-
+</div>
 </body>
 </html>

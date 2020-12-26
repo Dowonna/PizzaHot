@@ -52,15 +52,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>Â  Close Menu</a>
-     <a href="http://localhost/project_pizzahot/demo1.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Â  Overview</a>
-    <a href="http://localhost/project_pizzahot/demo2.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>Â  MENU</a>
-    <a href="http://localhost/project_pizzahot/demo3.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>Â  ABOUT</a>
-    <a href="http://localhost/project_pizzahot/demo4.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>Â  Contact</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>Â  Orders</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>Â  News</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Â  General</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>Â  History</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>Â  Settings</a><br><br>
+     <a href="http://localhost/project_pizzahot/demo1.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="http://localhost/project_pizzahot/demo2.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  MENU</a>
+    <a href="http://localhost/project_pizzahot/demo3.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  ABOUT</a>
+    <a href="http://localhost/project_pizzahot/demo4.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Contact</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
   </div>
 </nav>
 
@@ -71,17 +71,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:100px;margin-top:43px;">
   <div id='left_banner'>
-  	<table>
+  	<table style="font-size: 13px; border-collapse: collapse" border="1">
   		<tr>
-  			<th>Menu</th><th>number</th><th>price</th>
+  			<th width="105px">Menu</th><th>number</th><th>price</th>
   		</tr>
   		<c:forEach items="${sessionScope.basket}" var="data">
   			<tr>
-  				<td>${data[0]}</td><td>1</td><td>${data[1]}</td>
+  				<td><a href="Controller?command=deleteBasket&menu=${data[0]}&cost=${requestScope.cost}">${data[0]}</a></td>
+  				<td>${ data[2] }</td><td>${data[1]}</td>
   			</tr>
   		</c:forEach>
   	</table>
-  	<%request.getSession().setAttribute("basket", (ArrayList<String[]>)request.getSession().getAttribute("basket"));%>
+  	
+  	<p style="position: fixed; bottom: 50px;">Total Price : ${requestScope.cost}</p> 
   </div>
   
   <div class="w3-content">
@@ -114,23 +116,23 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
       <c:forEach items="${requestScope.menuAll}" var="data">
-    		<c:if test="${data.category=='pasta'}">
-				<h1><b>${data.name}</b>
-				<c:if test="${data.status!='none'}">
-					<span class="w3-tag w3-red w3-round">${data.status}</span>
-				</c:if>
-				<span class="w3-right w3-tag w3-dark-grey w3-round">$ ${data.price}</span></h1>
-      			<p class="w3-text-grey">${data.config}</p>
-      			<hr>
-      		</c:if>
-		</c:forEach>
+    	<c:if test="${data.category=='pasta'}">
+			<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
+			<c:if test="${data.status!='none'}">
+				<span class="w3-tag w3-red w3-round">${data.status}</span>
+			</c:if>
+			<span class="w3-right w3-tag w3-dark-grey w3-round">$ ${data.price}</span></h1>
+      		<p class="w3-text-grey">${data.config}</p>
+      		<hr>
+      	</c:if>
+	 </c:forEach>
     </div>
 
 
     <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
       <c:forEach items="${requestScope.menuAll}" var="data">
     		<c:if test="${data.category=='starter'}">
-				<h1><b>${data.name}</b>
+				<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
 				<c:if test="${data.status!='none'}">
 					<span class="w3-tag w3-red w3-round">${data.status}</span>
 				</c:if>
