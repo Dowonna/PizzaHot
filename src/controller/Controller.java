@@ -43,6 +43,8 @@ public class Controller extends HttpServlet {
 				menuInsert(request, response);
 			} else if(command.equals("menuDelete")) {
 				menuDelete(request, response);
+			} else if(command.equals("menuUpdate")) {
+				menuUpdate(request, response);
 			}
 
 		}catch(Exception s){
@@ -125,6 +127,12 @@ public class Controller extends HttpServlet {
 	public void menuManage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "showError.jsp";
 		try {
+			request.setAttribute("menu", request.getParameter("menu"));
+			request.setAttribute("config", request.getParameter("config"));
+			request.setAttribute("status", request.getParameter("status"));
+			request.setAttribute("price", request.getParameter("price"));
+			request.setAttribute("category", request.getParameter("category"));
+			
 			request.setAttribute("menuAll", instance.getAllMenu());
 			url = "menuManage.jsp";
 		}catch(Exception s){
@@ -153,6 +161,19 @@ public class Controller extends HttpServlet {
 			instance.addMenu(new Menu(request.getParameter("name"), request.getParameter("config")
 						, request.getParameter("status"), request.getParameter("category")
 						, Double.parseDouble(request.getParameter("price"))));
+			request.setAttribute("menuAll", instance.getAllMenu());
+			url = "menuManage.jsp";
+		}catch(Exception s){
+			request.setAttribute("errorMsg", s.getMessage());
+			s.printStackTrace();
+		}
+		request.getRequestDispatcher(url).forward(request, response);
+	}
+	
+	public void menuUpdate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String url = "showError.jsp";
+		try {
+			instance.updateMenu(request.getParameter("menu"), request.getParameter("status"), Double.parseDouble(request.getParameter("price")));
 			request.setAttribute("menuAll", instance.getAllMenu());
 			url = "menuManage.jsp";
 		}catch(Exception s){

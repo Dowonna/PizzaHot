@@ -73,12 +73,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<table border="1">
 	<thead>
 		<tr>
-			<th>메뉴명</th><th>표시재료</th><th>부연설명</th><th>가격</th><th>카테고리</th><th>삭제</th>
+			<th>메뉴명</th><th>표시재료</th><th>부연설명</th><th>가격</th><th>카테고리</th><th>삭제하기</th>
 		</tr>
 	</thead>
 	<c:forEach items="${requestScope.menuAll}" var="data">
 		<tr>
-			<th>${data.name}</th>
+			<th><a href="Controller?command=menuManage&menu=${data.name}&config=${data.config}
+				&status=${data.status}&price=${data.price}&category=${data.category}">
+				${data.name}</a>
+			</th>
 			<th>${data.config}</th>
 			<th>${data.status}</th>
 			<th>${data.price}</th>
@@ -88,29 +91,63 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	</c:forEach>
 	</table>
 	<br>
+	
+	<table>
+	<tr>
+	<td>
 	<form action="Controller" method="post">
-	<input type="hidden" name="command" value="menuInsert">
-	<table border="1">
-		<tr>
-			<td>메뉴명</td><td><input type="text" name="name"></td>
-		</tr>
-		<tr>
-	 		<td>표시재료</td><td><input type="text" name="config"></td>
-		</tr>
-		<tr>	
-			<td>부연설명</td><td><input type="text" name="status"></td>
-	 	</tr>
-	 	<tr>
-	 		<td>가격</td><td><input type="text" name="price"></td>
-	 	</tr>
-	 	<tr>
-	 		<td>카테고리</td><td><input type="text" name="category"></td>
-	 	</tr>
-	 	<tr>
-	 		<td colspan="2"><input type="submit" value="등록">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소"></td>
-	 	</tr>
+		<input type="hidden" name="command" value="menuInsert">
+		<table border="1" style="height: 200px">
+			<tr>
+				<td>메뉴명</td><td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+	 			<td>표시재료</td><td><input type="text" name="config"></td>
+			</tr>
+			<tr>	
+				<td>부연설명</td><td><input type="text" name="status"></td>
+		 	</tr>
+		 	<tr>
+	 			<td>가격</td><td><input type="text" name="price"></td>
+	 		</tr>
+	 		<tr>
+	 			<td>카테고리</td><td><input type="text" name="category"></td>
+	 		</tr>
+	 		<tr>
+	 			<td colspan="2"><input type="submit" value="등록">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소"></td>
+	 		</tr>
+		</table>
+	</form>
+	</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>
+	<form action="Controller" method="post">
+		<input type="hidden" name="command" value="menuUpdate">
+		<input type="hidden" name="menu" value="${requestScope.menu}">
+		<table border="1" style="height: 205px; text-align: left">
+			<tr>
+				<td>메뉴명</td><td>${requestScope.menu}</td>
+			</tr>
+			<tr>
+	 			<td>표시재료</td><td>${requestScope.config}</td>
+			</tr>
+			<tr>	
+				<td>부연설명</td><td><input type="text" name="status" value="${requestScope.status}"></td>
+		 	</tr>
+		 	<tr>
+	 			<td>가격</td><td><input type="text" name="price" value="${requestScope.price}"></td>
+	 		</tr>
+	 		<tr>
+	 			<td>카테고리</td><td>${requestScope.category}</td>
+	 		</tr>
+	 		<tr>
+	 			<td colspan="2"><input type="submit" value="수정">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소"></td>
+	 		</tr>
+		</table>
+	</form>
+	</td>
+	</tr>
 	</table>
-</form>
 </div>
 </div>
 </body>
