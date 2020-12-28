@@ -55,7 +55,7 @@
 ## 참고
 테이블 내부 구성 엑셀 문서 링크
 
-https://docs.google.com/spreadsheets/d/1tmYgHqzKEgwfonAy3ZgYwQT_1SNpU3c6bemWXRXWOFw/edit#gid=0
+https://docs.google.com/spreadsheets/d/1AU1l4ZkSYovK2h-uNDyUG6OUr7KVe04iYpt-N93Nw0s/edit#gid=0
 
 데이터모델링 링크
 
