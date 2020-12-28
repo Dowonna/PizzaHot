@@ -113,15 +113,15 @@ public class ReservationDAO {
 	public static boolean confirmReservation(int id) throws SQLException {
 		boolean result = false;
 		ArrayList<ReservationDTO> temps = ReservationDAO.getAllReservations();//모든 reservation 데이터 받아온 뒤
-		for(ReservationDTO r : temps) {// 여기는 한개씩 비교
-			if(r.getId() == 0) {	// id가 0이면			잠시만요
+		for(ReservationDTO r : temps) {
+			if(r.getId() == 0) {
 				EntityManager em = PublicCommon.getEntityManager();
 				EntityTransaction tx = em.getTransaction();
 				try {
 					tx.begin();
 					ReservationDTO temp = em.find(ReservationDTO.class, r.getReservationNum());
-					temp.setId(id);//id셋팅해주는 거에요
-					em.persist(temp);//헷갈리실 수 있는데 이게 그래서 join을 안썼어요 reservation부터 만들고 그다음에 id를 셋팅해주니깐 
+					temp.setId(id);
+					em.persist(temp); 
 					tx.commit();
 					result = true;
 				} catch (Exception e) {

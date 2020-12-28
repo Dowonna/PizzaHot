@@ -56,7 +56,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <table border="1">
 	<thead>
 		<tr>
-			<th>id</th><th>이름</th><th>핸드폰번호</th><th>방문자 수</th><th>날짜</th>
+			<th>id</th><th>이름</th><th>핸드폰번호</th><th>방문자 수</th><th>날짜</th><th>삭제</th>
 		</tr>
 	</thead>
 	
@@ -71,6 +71,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 			<td>${data.phone}</td>
 			<td>${data.people}</td>
 			<td>${data.data}</td>
+			<td><form action="Controller">
+			    	<input type="hidden" name="id" value=${data.id}>
+			    	<input type="hidden" name="Name" value=${data.name}>
+			    	<input type="hidden" name="Phone" value=${data.phone}>			    	
+			    	<input type="hidden" name="command" value="deleteGuest"/>			    
+			    	<input type="submit" value="삭제">
+			  </form></td>
 			
 		</tr>
 	</c:forEach>
