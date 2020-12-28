@@ -33,7 +33,7 @@
 ![new page1](https://i.imgur.com/0D3JHvS.jpg)
 
 ## 🤖 ChatBot
-  - 예약 정보를 Node-Red와 Telegram 연동해서 보냈다.
+  - 예약 정보를 Node-Red와 Telegram 연동해서 보냈습니다.
   - 전체 플로우 구성은 다음과 같다.
   ![OverallFlow](https://user-images.githubusercontent.com/58159833/103186112-972cf400-4902-11eb-95e5-22bfbf89a0be.PNG)
 
@@ -47,10 +47,8 @@
   - 김창훈 [(Changhun kim)](https://github.com/bbiku)
   
 ## 🔥 Issues
-  - 프론트엔드가 없어서 화면을 구현하기 어려웠다. 따라서 node-red를 사용하게 되었다.
-  - 임의로 data를 구현하여 OrcleDB에 저장하는 과정을 진행했기 때문에 실제 서비스에서의 과정과는 다소 달랐다.
-  
-  - 추후 프론트엔드 부분도 구현하여 전체적인 프로젝트를 완성해야할 필요성을 느끼게 되었다.
+  - 장바구니와 메세지 보내는 로직을 같이 구현하는 과정에서 이름과 전화번호를 통한 비회원 로그인를 목표로 했습니다
+    여기서 동시 접속자에 관해서 테이블이 겹칠 수 있다는 것을 발견했습니다. 차후 자바스크립트를 배우고 chatbot을 node-red가 아닌 이클립스에서 구현한다면 문제 해결이 가능할 것 같습니다.
  
   
 ## 참고
