@@ -16,7 +16,7 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 #left_banner
-{	
+{
 	position: fixed;
 	width:200px;
 	height:400px;
@@ -73,7 +73,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   	</table>
   	
   	<div style="position: fixed; bottom: 50px;">Total Price : ${requestScope.cost}
-  	<form style="right: 10px" action="Controller" Method="get">
+  	<form action="Controller" Method="get">
   			<input type="hidden" name="command" value="addReservation">
 			<input type="submit" value="로그인">
 	</form>
