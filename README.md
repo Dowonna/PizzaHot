@@ -61,7 +61,7 @@
 ## 🤖 ChatBot
   - 예약 정보를 Node-Red를 통해 Telegram 연동해서 보냈다.
   - 전체 플로우 구성은 다음과 같다.
-  (https://github.com/Ta-Ye/PizzaHot.gitnode_red/OverallFlow.PNG)
+  (https://user-images.githubusercontent.com/58159833/103186112-972cf400-4902-11eb-95e5-22bfbf89a0be.PNG)
   
 ## 참고
 테이블 내부 구성 엑셀 문서 링크
