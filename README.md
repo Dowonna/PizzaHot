@@ -15,7 +15,7 @@
 - 홈페이지에는 판매메뉴 및 위치안내 그리고 온라인 예약시스템 구현을 목표로 하였습니다.
 
 ## :eyes: Structure
-![img](https://github.com/kowo1001/PeopleOfMarket/blob/master/1.PNG)
+![ERD](https://user-images.githubusercontent.com/72329183/103186507-17078e00-4904-11eb-950b-395b6766f0c8.PNG)
 
 ## :hammer_and_wrench: Service Process
 ![Slide1](https://user-images.githubusercontent.com/37354978/102005472-5ce92180-3d5c-11eb-8e75-327304f69ee7.jpg)
