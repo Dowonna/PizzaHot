@@ -33,7 +33,7 @@
 ![new page1](https://i.imgur.com/0D3JHvS.jpg)
 
 ## 🤖 ChatBot
-  - 예약 정보를 Node-Red와 Telegram를 연동해서 보냈다.
+  - 예약 정보를 Node-Red와 Telegram 연동해서 보냈다.
   - 전체 플로우 구성은 다음과 같다.
   ![OverallFlow](https://user-images.githubusercontent.com/58159833/103186112-972cf400-4902-11eb-95e5-22bfbf89a0be.PNG)
 
