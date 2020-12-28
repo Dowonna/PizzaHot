@@ -42,9 +42,9 @@
 ## ✍️ Author
  Team PizzaHot
  
- :dancers: 최태열 [(Taeyeol Choi)](https://github.com/ta-ye)
- :gun: 김민건 [(Mingeon Kim)](https://github.com/alsrjs2441)
- :vhs: 김창훈 [(Changhun kim)](https://github.com/bbiku)
+ <h1>:dancers:</h1> 최태열 [(Taeyeol Choi)](https://github.com/ta-ye) <br>
+ <h1>:gun:</h1> 김민건 [(Mingeon Kim)](https://github.com/alsrjs2441) <br>
+ <h1>:vhs:</h1> 김창훈 [(Changhun kim)](https://github.com/bbiku) <br>
   
 ## 🔥 Issues
   - 장바구니와 메세지 보내는 로직을 같이 구현하는 과정에서 이름과 전화번호를 통한 비회원 로그인를 목표로 했습니다.
