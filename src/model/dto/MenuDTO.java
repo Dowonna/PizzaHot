@@ -14,8 +14,8 @@ import lombok.Setter;
 @Getter
 @Setter
 
-@Entity
-public class Menu {
+@Entity(name="MENU")
+public class MenuDTO {
 	
 	@Id
 	private String name;

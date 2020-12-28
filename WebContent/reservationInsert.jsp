@@ -3,7 +3,7 @@
     <%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>PizzaHot</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -39,8 +39,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Contact -->
 <div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
   <div class="w3-content">
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
-    <p>Find us at some address at some place or call us at 05050515-122330</p>
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Guest Info</h1>
+    <p>Find us at some address at some place or call us at 02-000-0000</p>
     <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
     <p class="w3-xxlarge"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
     <form action="http://127.0.0.1:1880/hello" method="get" >

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>PizzaHot</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 		<h3>${requestScope.errorMsg}</h3>
 			
 		<br><br><br>
-		<a href="${pageContext.request.contextPath}/demo1.jsp">메인 화면으로 이동하기</a>
+		<a href="${pageContext.request.contextPath}/home.jsp">메인 화면으로 이동하기</a>
 	</center>
 	
 </body>

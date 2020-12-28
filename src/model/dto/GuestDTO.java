@@ -24,7 +24,7 @@ import lombok.Setter;
 
 
 @Entity(name="guest")
-@SequenceGenerator(name="GUEST_SEQ_GEN",sequenceName="MEMBER_SEQ",
+@SequenceGenerator(name="GUEST_SEQ_GEN",sequenceName="GUEST_SEQ",
 initialValue=1)
 public class GuestDTO {
 	

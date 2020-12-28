@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>PizzaHot</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -37,8 +37,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   
   <div class="w3-content">
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
-    <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p><strong>The Chef?</strong> Mr. Italiano himself<img src="images/dog.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <p>PizzaHot is very good restaurant. we never followed PizzaHut.</p>
+    <p><strong>The Head Chef?</strong> Mr. Changhun <br>
+    <strong>The Vice Chef?</strong> Mr. Mingeon <br>
+    <strong>Washing Dishes?</strong> Mr. TaeYeol 
+    
+    <img src="images/TY.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"><img src="images/CH.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"><img src="images/MG.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"></p>
     <p>We are proud of our interiors.</p>
     <!-- * 카카오맵 - 지도퍼가기 -->
 <!-- 1. 지도 노드 -->
