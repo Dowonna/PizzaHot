@@ -18,7 +18,8 @@
 ![ERD](https://user-images.githubusercontent.com/72329183/103186507-17078e00-4904-11eb-950b-395b6766f0c8.PNG)
 
 ## :hammer_and_wrench: Service Process
-![Slide1](https://user-images.githubusercontent.com/37354978/102005472-5ce92180-3d5c-11eb-8e75-327304f69ee7.jpg)
+![serviceProcess](https://user-images.githubusercontent.com/72329183/103187885-892ea180-4909-11eb-8b38-70907afca962.PNG)
+
 :closed_lock_with_key: 관리자
   - 메뉴 관리 (추가, 삭제, 업데이트, 확인)
   - 예약자 관리
