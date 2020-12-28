@@ -59,12 +59,12 @@ public class Controller extends HttpServlet {
 				menuDelete(request, response);
 			} else if(command.equals("menuUpdate")) {
 				menuUpdate(request, response);
-			} else if(command.equals("Test")) {
-				Test(request, response);
 			} else if(command.equals("addReservation")) {
 				addReservation(request, response);
-			}else if(command.equals("getSomeReservation")) {
+			} else if(command.equals("getSomeReservation")) {
 				getSomeReservation(request, response);
+			} else if(command.equals("reservation")) {
+				reservation(request, response);
 			}
 		}catch(Exception s){
 			request.setAttribute("errorMsg", s.getMessage());
@@ -153,6 +153,18 @@ public class Controller extends HttpServlet {
 		String url = "showError.jsp";
 		try {
 			request.setAttribute("menuAll", instance.getAllMenu());
+			url = "menu.jsp";
+		}catch(Exception s){
+			request.setAttribute("errorMsg", s.getMessage());
+			s.printStackTrace();
+		}
+		request.getRequestDispatcher(url).forward(request, response);
+	}
+	
+	public void reservation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String url = "showError.jsp";
+		try {
+			request.setAttribute("menuAll", instance.getAllMenu());
 			request.getSession().setAttribute("basket", new ArrayList<String[]>());
 			url = "demo2.jsp";
 		}catch(Exception s){
@@ -216,9 +228,6 @@ public class Controller extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 	
-	
-	
-	
 	public void menuManage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "showError.jsp";
 		try {
@@ -278,14 +287,6 @@ public class Controller extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 	
-	public void Test(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<String[]> arr = (ArrayList<String[]>)request.getSession().getAttribute("basket");
-		System.out.println(arr.get(0)[0]);
-		System.out.println(arr.get(0)[1]);
-		System.out.println(arr.get(0)[2]);
-		
-	}
-	
 	public void addReservation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "demo4.jsp";
 		ArrayList<String[]> arr = (ArrayList<String[]>)request.getSession().getAttribute("basket");
@@ -314,32 +315,3 @@ public class Controller extends HttpServlet {
 	}
 }
 
-/*protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-request.setCharacterEncoding("utf-8");
-//command pattern
-String command = request.getParameter("command");
-
-try{
-	if(command.equals("menuAll")){
-		menuAll(request, response);
-	} else if(command.equals("addBasket")) {
-		addBasket(request, response);
-	} else if(command.equals("deleteBasket")) {
-		deleteBasket(request, response);
-	} else if(command.equals("menuManage")) {
-		menuManage(request, response);
-	} else if(command.equals("menuInsert")) {
-		menuInsert(request, response);
-	} else if(command.equals("menuDelete")) {
-		menuDelete(request, response);
-	} else if(command.equals("menuUpdate")) {
-		menuUpdate(request, response);
-	}
-
-}catch(Exception s){
-	request.setAttribute("errorMsg", s.getMessage());
-	request.getRequestDispatcher("showError.jsp").forward(request, response);
-	s.printStackTrace();
-}
-}
-*/

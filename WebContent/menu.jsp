@@ -1,4 +1,4 @@
-<%@page import="java.util.ArrayList"%>
+<%@ page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
@@ -13,16 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-#left_banner
-{	
-	border: 1px solid black;
-	position: fixed;
-	width:200px;
-	height:400px;
-	top:300px;
-	right:0%;
-	background-color:white;
-}
+
 </style>
 <body class="w3-light-grey">
 
@@ -37,6 +28,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
     <h5>Dashboard</h5>
   </div>
+  <div class="w3-bar-block">
   <jsp:include page="nav.jsp"/>
 </nav>
 
@@ -46,29 +38,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:100px;margin-top:43px;">
-  <div id='left_banner'>
-  	<table style="font-size: 13px; border-collapse: collapse;" border="1">
-  		<tr>
-  			<th width="110px">Menu</th><th>number</th><th>price</th>
-  		</tr>
-  		<c:forEach items="${sessionScope.basket}" var="data">
-  			<tr>
-  				<td><a href="Controller?command=deleteBasket&menu=${data[0]}&cost=${requestScope.cost}">${data[0]}</a></td>
-  				<td>${ data[2] }</td><td>${data[1]}</td>
-  			</tr>
-  		</c:forEach>
-  	</table>
-  	
-  	<p style="position: fixed; bottom: 75px;">Total Price : ${requestScope.cost}</p>
-  	<form style="position: fixed; bottom: 60px; right: 5px"action="Controller" Method="get">
-  		<input type="hidden" name="command" value="addReservation">
-		<input type="submit" value="예약하기">
-	</form> 
-  </div>
-  
   <div class="w3-content">
+  
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
-    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+	    <div class="w3-row w3-center w3-border w3-border-dark-grey">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
         <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
       </a>
@@ -83,7 +56,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
     	<c:forEach items="${requestScope.menuAll}" var="data">
     		<c:if test="${data.category=='pizza'}">
-				<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
+				<h1><b>${data.name}</b>
 				<c:if test="${data.status!='none'}">
 					<span class="w3-tag w3-red w3-round">${data.status}</span>
 				</c:if>
@@ -97,7 +70,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
       <c:forEach items="${requestScope.menuAll}" var="data">
     	<c:if test="${data.category=='pasta'}">
-			<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
+			<h1><b>${data.name}</b>
 			<c:if test="${data.status!='none'}">
 				<span class="w3-tag w3-red w3-round">${data.status}</span>
 			</c:if>
@@ -112,7 +85,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
       <c:forEach items="${requestScope.menuAll}" var="data">
     		<c:if test="${data.category=='starter'}">
-				<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
+				<h1><b>${data.name}</b>
 				<c:if test="${data.status!='none'}">
 					<span class="w3-tag w3-red w3-round">${data.status}</span>
 				</c:if>
@@ -144,3 +117,8 @@ document.getElementById("myLink").click();
 </script>
 </body>
 </html>
+
+
+
+
+

@@ -7,8 +7,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import lombok.ToString;
-import model.dto.GuestDTO;
 import model.dto.ReservationDTO;
 import model.util.PublicCommon;
 
@@ -73,7 +71,7 @@ public class ReservationDAO {
 	// 수정 : 예약번호를 통해 기존 reservation에서 메뉴 변경
 	public static boolean updateReservation(String reservationNum, String menuName) throws SQLException {
 		EntityManager em = PublicCommon.getEntityManager();
-		EntityTransaction tx = em.getTransaction();
+		EntityTransaction tx = em.getTransaction();// 여기 tx.begin();
 		try {
 			ReservationDTO reservation = em.find(ReservationDTO.class, reservationNum);
 			reservation.setMenuName(menuName);
@@ -112,16 +110,16 @@ public class ReservationDAO {
 	
 	public static boolean confirmReservation(int id) throws SQLException {
 		boolean result = false;
-		ArrayList<ReservationDTO> temps = ReservationDAO.getAllReservations();
-		for(ReservationDTO r : temps) {
-			if(r.getId() == 0) {				
+		ArrayList<ReservationDTO> temps = ReservationDAO.getAllReservations();//모든 reservation 데이터 받아온 뒤
+		for(ReservationDTO r : temps) {// 여기는 한개씩 비교
+			if(r.getId() == 0) {	// id가 0이면			잠시만요
 				EntityManager em = PublicCommon.getEntityManager();
 				EntityTransaction tx = em.getTransaction();
 				try {
 					tx.begin();
 					ReservationDTO temp = em.find(ReservationDTO.class, r.getReservationNum());
-					temp.setId(id);
-					em.persist(temp);
+					temp.setId(id);//id셋팅해주는 거에요
+					em.persist(temp);//헷갈리실 수 있는데 이게 그래서 join을 안썼어요 reservation부터 만들고 그다음에 id를 셋팅해주니깐 
 					tx.commit();
 					result = true;
 				} catch (Exception e) {
