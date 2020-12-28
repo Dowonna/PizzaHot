@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -8,7 +10,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-
 </style>
 <body class="w3-light-grey">
 
@@ -35,19 +36,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
     <h5>Dashboard</h5>
   </div>
-  <div class="w3-bar-block">
-	
-	<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="http://localhost/project_pizzahot/demo1.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Overview</a>
-    <a href="http://localhost/project_pizzahot/demo2.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  MENU</a>
-    <a href="http://localhost/project_pizzahot/demo3.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  ABOUT</a>
-    <a href="Controller?command=menuAll" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Reservation</a>
-    <a href="http://localhost/project_pizzahot/someguest.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Search</a>
-    <a href="manager.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  관리자 페이지</a>
-    <!-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br> -->
-    </div>
+  <jsp:include page="nav.jsp"/>
 </nav>
 
 
@@ -56,7 +45,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:100px;margin-top:43px;">
-  <div id='left_banner'><br><br>두둥 레이어~<br><br></div>
   <div class="w3-content">
   
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
@@ -73,15 +61,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
 
     <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
-      <form action="CustomerServlet">
-		<input type="hidden" name="id" value= 22 />
-		<input type="hidden" name="command" value="delete" />
-		
-      	<h1><b><input type="submit" value= "Margherita" style="background-color: transparent; border:0px;"/></b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
-      	<p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
-      </form>
+      <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+      <p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
       <hr>
-      
+   
       <h1><b>Formaggio</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$15.50</span></h1>
       <p class="w3-text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
       <hr>
@@ -158,8 +141,3 @@ document.getElementById("myLink").click();
 </script>
 </body>
 </html>
-
-
-
-
-
