@@ -29,13 +29,13 @@
   - 예약 일자 선택 후 안내 문자 받기(Telegram)
 
 ## 💡 Technologies Used
-![new page1](https://user-images.githubusercontent.com/37354978/102030120-ba30b180-3df4-11eb-960a-26c82137cfe3.JPG)
+![new page1](https://i.imgur.com/0D3JHvS.jpg)
 
 ## 🌊 Data Flow
 
 ### MVC Model Architecture
 
-![데이터흐름도2](https://i.imgur.com/0D3JHvS.jpg)
+![데이터흐름도2]()
 
 ## :movie_camera: 시연영상
 [![시연영상](https://img.youtube.com/vi/l624RcGCe2M/0.jpg)](https://www.youtube.com/embed/l624RcGCe2M)
