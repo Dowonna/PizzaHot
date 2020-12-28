@@ -10,7 +10,7 @@
     <a href="http://localhost/project_pizzahot/demo1.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Overview</a>
     <a href="Controller?command=menuAll" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  MENU</a>
     <a href="http://localhost/project_pizzahot/demo3.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  ABOUT</a>
-    <a href="Controller?command=menuAll" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar-plus fa-fw"></i>  Reservation</a>
+    <a href="Controller?command=reservation" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar-plus fa-fw"></i>  Reservation</a>
     <a href="http://localhost/project_pizzahot/someguest.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Search</a>
     <a href="manager.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-shield fa-fw"></i>  Administer</a>
     </div>
