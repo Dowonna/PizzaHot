@@ -74,17 +74,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 			
 		</tr>
 	</c:forEach>
-	
-
-
-
-
-
 </table>
 
 <br><br><br>
 <font color="blue">id를 클릭하면 상세 정보 확인이 가능합니다</font>
 <br><br><br>
+<a href="Controller?command=menuManage">메뉴 관리하기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="${pageContext.request.contextPath}/manager.jsp">뒤로가기</a>
 </center>
 </body>

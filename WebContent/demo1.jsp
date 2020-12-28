@@ -8,8 +8,15 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.bgimg {
+  background-repeat: repeat;
+  background-size: cover;
+  background-image: url("images/pizza_home.jpg");
+  min-height: 90%;
+}
 </style>
 <body class="w3-light-grey">
 
@@ -32,19 +39,20 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+<div class="bgimg w3-main" style="margin-left:300px;margin-top:43px; font-family: 'Amatic SC'">
 
 <!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-padding">
-    <span class="w3-tag w3-xlarge">Open from 10am to 12pm</span>
-  </div>
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-white w3-hide-small" style="font-size:100px">thin<br>CRUST PIZZA</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>thin<br>CRUST PIZZA</b></span>
-    <p><a href="Controller?command=menuAll" class="w3-button w3-xxlarge w3-black">Let me see the menu</a></p>
-  </div>
-</header>
+	<div class="w3-display-container" id="home">
+  	<div class="w3-display-bottomleft w3-padding">
+	    <span class="w3-tag w3-xlarge">Open from 10am to 12pm</span>
+  	</div>
+  	<div class="w3-center" style="padding-top: 200px; padding-bottom: 200px">
+	    <span class="w3-text-white w3-hide-small" style="font-size:150px"><b>PIZZAHOT</b></span>
+	    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px;"><b>thin<br>CRUST PIZZA</b></span>
+	    <p><a href="Controller?command=menuAll" class="w3-button w3-xxlarge w3-black">Let me see the menu</a></p>
+  	</div>
+	</div>
+</div>
 
 <script>
 // Get the Sidebar
