@@ -39,7 +39,7 @@
 
 
 ## ✍️ Author
- Team PeopelOfMarket
+ Team PizzaHot
   - 최태열 [(Taeyeol Choi)](https://github.com/ta-ye)
   - 김민건 [(Mingeon Kim)](https://github.com/alsrjs2441)
   - 김창훈 [(Changhun kim)](https://github.com/bbiku)
