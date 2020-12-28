@@ -8,16 +8,15 @@
 
 관리자는 메뉴 관리와 예약 관리를 할 수 있다.
 
-## Intruduction
-- :raising_hand: :ok_woman: 마트의 민족은 앱이나 웹으로 원하는 물건을 주문하면 직접 고객이 인근 마트에서 구매했었던 상품들을 찾아가는 JPA로 구현한 서비스입니다.
+## :fork_and_knife: Intruduction
 - 이탈리아 음식으로 유명한 "Pizza"! 한국에서도 대표적인 술안주로 자리매김하게 되면서 많은 피자가게가 오픈되었습니다.
 - "PizzaHot"은 피자전문 레스토랑을 컨셉으로 한 음식점이 오픈되었다는 가정하에, 가게 홍보를 위한 홈페이지 제작을 시작하게 되었습니다.
 - 홈페이지에는 판매메뉴 및 위치안내 그리고 온라인 예약시스템 구현을 목표로 하였습니다.
 
-## :eyes: Structure
+## :wine_glass: Structure
 ![img](https://github.com/kowo1001/PeopleOfMarket/blob/master/1.PNG)
 
-## :hammer_and_wrench: Service Process
+## :spaghetti: Service Process
 ![Slide1](https://user-images.githubusercontent.com/37354978/102005472-5ce92180-3d5c-11eb-8e75-327304f69ee7.jpg)
 :information_desk_person: 관리자
   - 마트 검색
