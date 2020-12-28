@@ -37,11 +37,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   
   <div class="w3-content">
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
-    <p>Pizza Hot is awesome restaurant. We don't imitate Pizza Hut</p>
+    <p>PizzaHot is very good restaurant. we never followed PizzaHut.</p>
     <p><strong>The Head Chef?</strong> Mr. Changhun <br>
     <strong>The Vice Chef?</strong> Mr. Mingeon <br>
-    <strong>Washing Dishes?</strong> Mr. Taeyeol <br>
-    <img src="images/dog.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <strong>Washing Dishes?</strong> Mr. TaeYeol 
+    
+    <img src="images/TY.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"><img src="images/CH.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"><img src="images/MG.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"></p>
     <p>We are proud of our interiors.</p>
     <!-- * 카카오맵 - 지도퍼가기 -->
 <!-- 1. 지도 노드 -->

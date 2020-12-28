@@ -15,7 +15,7 @@ import model.GuestDAO;
 import model.ReservationDAO;
 import model.Service;
 import model.dto.GuestDTO;
-import model.dto.Menu;
+import model.dto.MenuDTO;
 //http://localhost/project_pizzahot/Controller
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
@@ -166,7 +166,7 @@ public class Controller extends HttpServlet {
 		try {
 			request.setAttribute("menuAll", instance.getAllMenu());
 			request.getSession().setAttribute("basket", new ArrayList<String[]>());
-			url = "demo2.jsp";
+			url = "reservation.jsp";
 		}catch(Exception s){
 			request.setAttribute("errorMsg", s.getMessage());
 			s.printStackTrace();
@@ -195,7 +195,7 @@ public class Controller extends HttpServlet {
 			}
 			request.setAttribute("cost",cost);
 			request.setAttribute("menuAll", instance.getAllMenu());
-			url = "demo2.jsp";
+			url = "reservation.jsp";
 		}catch(Exception s){
 			request.setAttribute("errorMsg", s.getMessage());
 			s.printStackTrace();
@@ -220,7 +220,7 @@ public class Controller extends HttpServlet {
 			}
 			request.setAttribute("cost",cost);
 			request.setAttribute("menuAll", instance.getAllMenu());
-			url = "demo2.jsp";
+			url = "reservation.jsp";
 		}catch(Exception s){
 			request.setAttribute("errorMsg", s.getMessage());
 			s.printStackTrace();
@@ -262,7 +262,7 @@ public class Controller extends HttpServlet {
 	public void menuInsert(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "showError.jsp";
 		try {
-			instance.addMenu(new Menu(request.getParameter("name"), request.getParameter("config")
+			instance.addMenu(new MenuDTO(request.getParameter("name"), request.getParameter("config")
 						, request.getParameter("status"), request.getParameter("category")
 						, Double.parseDouble(request.getParameter("price"))));
 			request.setAttribute("menuAll", instance.getAllMenu());
@@ -288,7 +288,7 @@ public class Controller extends HttpServlet {
 	}
 	
 	public void addReservation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "demo4.jsp";
+		String url = "reservationInsert.jsp";
 		ArrayList<String[]> arr = (ArrayList<String[]>)request.getSession().getAttribute("basket");
 		try {
 			Service.addReservation(arr);
