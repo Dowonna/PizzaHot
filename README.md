@@ -37,6 +37,8 @@
 
 ![데이터흐름도2](https://user-images.githubusercontent.com/37354978/102006703-7e4f0b00-3d66-11eb-81c3-690095433932.JPG)
 
+## 시연영상
+[![시연영상](https://img.youtube.com/vi/l624RcGCe2M/0.jpg)](https://www.youtube.com/embed/l624RcGCe2M)
 
 ## ✍️ Author
  Team PizzaHot
