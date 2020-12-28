@@ -1,10 +1,5 @@
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-
-<% String url = application.getContextPath() + "/"; %>
-
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -15,21 +10,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-#left_banner
-{	
-	position: fixed;
-	width:200px;
-	height:400px;
-	top:300px;
-	right:0%;
-	background-color:#ccff33;
-}
 </style>
 <body class="w3-light-grey">
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Â Menu</button>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item w3-right">Logo</span>
 </div>
 
@@ -59,82 +45,79 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:100px;margin-top:43px;">
-  <div id='left_banner'>
-  	<table style="font-size: 13px; border-collapse: collapse" border="1">
-  		<tr>
-  			<th width="105px">Menu</th><th>number</th><th>price</th>
-  		</tr>
-  		<c:forEach items="${sessionScope.basket}" var="data">
-  			<tr>
-  				<td><a href="Controller?command=deleteBasket&menu=${data[0]}&cost=${requestScope.cost}">${data[0]}</a></td>
-  				<td>${ data[2] }</td><td>${data[1]}</td>
-  			</tr>
-  		</c:forEach>
-  	</table>
-  	
-  	<div style="position: fixed; bottom: 50px;">Total Price : ${requestScope.cost}
-  	<form style="right: 10px" action="Controller" Method="get">
-  			<input type="hidden" name="command" value="addReservation">
-			<input type="submit" value="로그인">
-	</form>
-	</div>
-  </div>
-  
   <div class="w3-content">
+  
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
     <div class="w3-row w3-center w3-border w3-border-dark-grey">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
         <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
-        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pasta</div>
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Salads</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
         <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Starter</div>
       </a>
     </div>
-    
+
     <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
-    	<c:forEach items="${requestScope.menuAll}" var="data">
-    		<c:if test="${data.category=='pizza'}">
-				<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
-				<c:if test="${data.status!='none'}">
-					<span class="w3-tag w3-red w3-round">${data.status}</span>
-				</c:if>
-				<span class="w3-right w3-tag w3-dark-grey w3-round">$ ${data.price}</span></h1>
-      			<p class="w3-text-grey">${data.config}</p>
-      			<hr>
-      		</c:if>
-		</c:forEach>
+      <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+      <p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+      <hr>
+   
+      <h1><b>Formaggio</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$15.50</span></h1>
+      <p class="w3-text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+      <hr>
+      
+      <h1><b>Chicken</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$17.00</span></h1>
+      <p class="w3-text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
+      <hr>
+
+      <h1><b>Pineapple'o'clock</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$16.50</span></h1>
+      <p class="w3-text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+      <hr>
+
+      <h1><b>Meat Town</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$20.00</span></h1>
+      <p class="w3-text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+      <hr>
+
+      <h1><b>Parma</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">$21.50</span></h1>
+      <p class="w3-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
     </div>
 
     <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
-      <c:forEach items="${requestScope.menuAll}" var="data">
-    	<c:if test="${data.category=='pasta'}">
-			<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
-			<c:if test="${data.status!='none'}">
-				<span class="w3-tag w3-red w3-round">${data.status}</span>
-			</c:if>
-			<span class="w3-right w3-tag w3-dark-grey w3-round">$ ${data.price}</span></h1>
-      		<p class="w3-text-grey">${data.config}</p>
-      		<hr>
-      	</c:if>
-	 </c:forEach>
+      <h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$13.50</span></h1>
+      <p class="w3-text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
+      <hr>
+   
+      <h1><b>Ravioli</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$14.50</span></h1>
+      <p class="w3-text-grey">Ravioli filled with cheese</p>
+      <hr>
+      
+      <h1><b>Spaghetti Classica</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$11.00</span></h1>
+      <p class="w3-text-grey">Fresh tomatoes, onions, ground beef</p>
+      <hr>
+
+      <h1><b>Seafood pasta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$25.50</span></h1>
+      <p class="w3-text-grey">Salmon, shrimp, lobster, garlic</p>
     </div>
 
 
     <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
-      <c:forEach items="${requestScope.menuAll}" var="data">
-    		<c:if test="${data.category=='starter'}">
-				<h1><b><a href="Controller?command=addBasket&menu=${data.name}&price=${data.price}">${data.name}</a></b>
-				<c:if test="${data.status!='none'}">
-					<span class="w3-tag w3-red w3-round">${data.status}</span>
-				</c:if>
-				<span class="w3-right w3-tag w3-dark-grey w3-round">$ ${data.price}</span></h1>
-      			<p class="w3-text-grey">${data.config}</p>
-      			<hr>
-      		</c:if>
-		</c:forEach>
+      <h1><b>Today's Soup</b> <span class="w3-tag w3-grey w3-round">Seasonal</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5.50</span></h1>
+      <p class="w3-text-grey">Ask the waiter</p>
+      <hr>
+   
+      <h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$8.50</span></h1>
+      <p class="w3-text-grey">Bread with pesto, tomatoes, onion, garlic</p>
+      <hr>
+      
+      <h1><b>Garlic bread</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$9.50</span></h1>
+      <p class="w3-text-grey">Grilled ciabatta, garlic butter, onions</p>
+      <hr>
+      
+      <h1><b>Tomozzarella</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10.50</span></h1>
+      <p class="w3-text-grey">Tomatoes and mozzarella</p>
     </div><br>
 
   </div>

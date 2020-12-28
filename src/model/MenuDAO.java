@@ -7,11 +7,10 @@ import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import model.dto.Menu;
+import model.dto.MenuDTO;
 import model.util.PublicCommon;
 
 public class MenuDAO {
-	
 //	public static void main(String[] args) {
 //		try {
 //			addMenu(new Menu("Margherita", "Fresh tomatoes, fresh mozzarella, fresh basil","none","pizza",12.5));
@@ -35,7 +34,7 @@ public class MenuDAO {
 //		}
 //	}
 	
-	public static boolean addMenu(Menu menu) throws SQLException{
+	public static boolean addMenu(MenuDTO menu) throws SQLException{
 		
 		EntityManager em = PublicCommon.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -58,7 +57,7 @@ public class MenuDAO {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		try {
-			Menu menu = em.find(Menu.class, name);
+			MenuDTO menu = em.find(MenuDTO.class, name);
 			if (menu==null) {
 				return false;
 			}
@@ -77,7 +76,7 @@ public class MenuDAO {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		try {
-			Menu menu = em.find(Menu.class, name);
+			MenuDTO menu = em.find(MenuDTO.class, name);
 			if (menu==null) {
 				return false;
 			}
@@ -89,10 +88,10 @@ public class MenuDAO {
 		return true;
 	}
 	
-	public static ArrayList<Menu> getMenus(){
+	public static ArrayList<MenuDTO> getMenus(){
 		EntityManager em = PublicCommon.getEntityManager();
 		try {
-			return (ArrayList<Menu>)em.createNativeQuery("select * from menu", Menu.class).getResultList();
+			return (ArrayList<MenuDTO>)em.createNativeQuery("select * from menu", MenuDTO.class).getResultList();
 		} finally {
 			em.close();
 		}
