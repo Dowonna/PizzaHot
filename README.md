@@ -42,7 +42,7 @@
 ## ✍️ Author
  Team PizzaHot
  
- <p style="font-size=20px">:dancers:</p> 최태열 [(Taeyeol Choi)](https://github.com/ta-ye) <br>
+ <a style="font-size:20px">:dancers:</a> 최태열 [(Taeyeol Choi)](https://github.com/ta-ye) <br>
  :gun: 김민건 [(Mingeon Kim)](https://github.com/alsrjs2441) <br>
  :vhs: 김창훈 [(Changhun kim)](https://github.com/bbiku) <br>
   
