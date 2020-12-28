@@ -10,3 +10,6 @@ CREATE TABLE reservation (
        foodNum         	VARCHAR2(20) NOT NULL,
       	id                	NUMBER(5) NULL
 );
+
+ALTER TABLE reservation  ADD FOREIGN KEY (menuName) REFERENCES menu (name);
+ALTER TABLE reservation  ADD FOREIGN KEY (id) REFERENCES guest (guest_id);

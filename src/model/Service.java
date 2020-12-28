@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.dto.GuestDTO;
-import model.dto.Menu;
+import model.dto.MenuDTO;
 import model.dto.ReservationDTO;
 
 public class Service {
@@ -16,7 +16,7 @@ public class Service {
 		return instance;
 	}
 
-	public ArrayList<Menu> getAllMenu() throws SQLException{
+	public ArrayList<MenuDTO> getAllMenu() throws SQLException{
 		return MenuDAO.getMenus();
 	}
 	
@@ -28,7 +28,7 @@ public class Service {
 		return MenuDAO.deleteMenu(name);
 	}
 	
-	public boolean addMenu(Menu menu) throws SQLException{
+	public boolean addMenu(MenuDTO menu) throws SQLException{
 		return MenuDAO.addMenu(menu);
 	}
 	
