@@ -32,11 +32,10 @@
 ## 💡 Technologies Used
 ![new page1](https://i.imgur.com/0D3JHvS.jpg)
 
-## 🌊 Data Flow
-
-### MVC Model Architecture
-
-![데이터흐름도2]()
+## 🤖 ChatBot
+  - 예약 정보를 Node-Red를 통해 Telegram 연동해서 보냈다.
+  - 전체 플로우 구성은 다음과 같다.
+  ![OverallFlow](https://user-images.githubusercontent.com/58159833/103186112-972cf400-4902-11eb-95e5-22bfbf89a0be.PNG)
 
 ## :movie_camera: 시연영상
 [![시연영상](https://img.youtube.com/vi/l624RcGCe2M/0.jpg)](https://www.youtube.com/embed/l624RcGCe2M)
@@ -52,11 +51,7 @@
   - 임의로 data를 구현하여 OrcleDB에 저장하는 과정을 진행했기 때문에 실제 서비스에서의 과정과는 다소 달랐다.
   
   - 추후 프론트엔드 부분도 구현하여 전체적인 프로젝트를 완성해야할 필요성을 느끼게 되었다.
-  
-## 🤖 ChatBot
-  - 예약 정보를 Node-Red를 통해 Telegram 연동해서 보냈다.
-  - 전체 플로우 구성은 다음과 같다.
-  ![OverallFlow](https://user-images.githubusercontent.com/58159833/103186112-972cf400-4902-11eb-95e5-22bfbf89a0be.PNG)
+ 
   
 ## 참고
 테이블 내부 구성 엑셀 문서 링크
