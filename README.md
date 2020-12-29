@@ -1,4 +1,4 @@
-# JSP MiniProject
+# Web MiniProject
 
 ## :pizza: PizzaHot
 
