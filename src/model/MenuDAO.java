@@ -7,8 +7,6 @@ import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import org.junit.jupiter.api.Test;
-
 import model.dto.MenuDTO;
 import model.util.PublicCommon;
 

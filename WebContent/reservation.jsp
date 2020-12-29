@@ -40,7 +40,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <jsp:include page="nav.jsp"/>
 </nav>
 
-
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
@@ -59,8 +58,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   		</c:forEach>
   	</table>
   	
-  	<p style="position: fixed; bottom: 75px;">Total Price : ${requestScope.cost}</p>
-  	<form style="position: fixed; bottom: 60px; right: 5px"action="Controller" Method="get">
+  	<p style="position: absolute; bottom: 20px;">Total Price : ${requestScope.cost}</p>
+  	<form style="position: absolute; bottom: 10px; right: 5px"action="Controller" Method="get">
   		<input type="hidden" name="command" value="addReservation">
 		<input type="submit" value="예약하기">
 	</form> 
