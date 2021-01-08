@@ -29,7 +29,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
     <h5>Dashboard</h5>
   </div>
-  <jsp:include page="nav.jsp"/>
+  <div class="w3-bar-block">
+	<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a onclick="home()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw"></i>  Overview</a>
+    <a onclick="menu()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-pizza-slice fa-fw"></i>  MENU</a>
+    <a onclick="about()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullhorn fa-fw"></i>  ABOUT</a>
+    <a href="Controller?command=reservation" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar-plus fa-fw"></i>  Reservation</a>
+    <a onclick="search1()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Search</a>
+    <a onclick="administer()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-shield fa-fw"></i>  Administer</a>
+    </div>
 </nav>
 
 
@@ -74,8 +82,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <br><br><br>
 <font color="blue">id를 클릭하면 상세 정보 확인이 가능합니다</font>
 <br><br><br>
-<a href="Controller?command=menuManage">메뉴 관리하기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="${pageContext.request.contextPath}/manager.jsp">뒤로가기</a>
+<a href="menuManage_axios.jsp">메뉴 관리하기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="${pageContext.request.contextPath}/home.html">뒤로가기</a>
 </center>
 </body>
 </html>

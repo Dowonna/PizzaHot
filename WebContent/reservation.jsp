@@ -8,6 +8,7 @@
 <title>PizzaHot</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -37,14 +38,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
     <h5>Dashboard</h5>
   </div>
-  <jsp:include page="nav.jsp"/>
+  <div id="nav" class="w3-bar-block">
+    </div>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:100px;margin-top:43px;">
+<div id="11" class="w3-main" style="margin-left:100px;margin-top:43px;">
   <div id='left_banner'>
   	<table style="font-size: 13px; border-collapse: collapse;" border="1">
   		<tr>
@@ -140,6 +142,63 @@ function openMenu(evt, menuName) {
   evt.currentTarget.firstElementChild.className += " w3-red";
 }
 document.getElementById("myLink").click();
+
+
+	axios.get("nav.jsp").then(function (r12){
+		document.getElementById("nav").innerHTML = r12.data;
+}).catch(function(){
+	console.log("예외 발생");
+})
+
+</script>
+ <script>
+
+
+function administer() {
+	axios.get("admin.jsp").then(function (r12){
+			document.getElementById("11").innerHTML = r12.data;
+	}).catch(function(){
+		console.log("예외 발생");
+	})
+	
+}
+
+function home() {
+	axios.get("main.jsp").then(function (r12){
+			document.getElementById("11").innerHTML = r12.data;
+	}).catch(function(){
+		console.log("예외 발생");
+	})
+	
+}
+
+function about() {
+	axios.get("about_axios.jsp").then(function (r12){
+		console.log(r12)
+		document.getElementById("11").innerHTML = r12.data
+	}).catch(function(){
+		console.log("예외 발생");
+	})
+	
+}
+
+function search1() {
+	axios.get("search_axios.jsp").then(function (r12){
+			document.getElementById("11").innerHTML = r12.data;
+	}).catch(function(){
+		console.log("예외 발생");
+	})
+	
+}
+
+function menu() {
+	axios.get("menu_axios.jsp").then(function (r12){
+			document.getElementById("11").innerHTML = r12.data;
+	}).catch(function(){
+		console.log("예외 발생");
+	})
+	
+}	
 </script>
 </body>
 </html>

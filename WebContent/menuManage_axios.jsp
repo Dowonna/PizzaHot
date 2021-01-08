@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-
+<%@page import="model.Service"%>
 <% String url = application.getContextPath() + "/"; %>
 
 <!DOCTYPE html>
@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 #left_banner
@@ -55,6 +56,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 <div class="w3-display-container w3-center">
+ <%
+			Service instance = Service.getInstance();
+			request.setAttribute("menuAll", instance.getAllMenu());
+	%>
 	<table border="1">
 	<thead>
 		<tr>
@@ -63,9 +68,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	</thead>
 	<c:forEach items="${requestScope.menuAll}" var="data">
 		<tr>
-			<th><a href="Controller?command=menuManage&menu=${data.name}&config=${data.config}
-				&status=${data.status}&price=${data.price}&category=${data.category}">
-				${data.name}</a>
+			
+			<th><button onclick='menumove("${data.name}","${data.config}","${data.status}","${data.price}","${data.category}")'>
+				${data.name}</button>
 			</th>
 			<th>${data.config}</th>
 			<th>${data.status}</th>
@@ -106,30 +111,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	</td>
 	<td>&nbsp;&nbsp;&nbsp;</td>
 	<td>
-	<form action="Controller" method="post">
-		<input type="hidden" name="command" value="menuUpdate">
-		<input type="hidden" name="menu" value="${requestScope.menu}">
-		<table border="1" style="height: 205px; text-align: left">
-			<tr>
-				<td>메뉴명</td><td>${requestScope.menu}</td>
-			</tr>
-			<tr>
-	 			<td>표시재료</td><td>${requestScope.config}</td>
-			</tr>
-			<tr>	
-				<td>부연설명</td><td><input type="text" name="status" value="${requestScope.status}"></td>
-		 	</tr>
-		 	<tr>
-	 			<td>가격</td><td><input type="text" name="price" value="${requestScope.price}"></td>
-	 		</tr>
-	 		<tr>
-	 			<td>카테고리</td><td>${requestScope.category}</td>
-	 		</tr>
-	 		<tr>
-	 			<td colspan="2"><input type="submit" value="수정">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소"></td>
-	 		</tr>
-		</table>
-	</form>
+	<div id = "12"></div>
 	</td>
 	</tr>
 	</table>
@@ -137,6 +119,26 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<a href="${pageContext.request.contextPath}/guestList.jsp">뒤로가기</a>
 </div>
 </div>
-
+<script>
+function menumove(name, config , status, price, category) {
+	let url = "Controller?command=menuManage&menu="+name+"&config="+config+"&status="+status+"&price="+price+"&category="+category;
+	//let test =v
+	console.log(url);
+	axios.get("test.jsp",{
+		params :{
+			"name" : name,
+			"config" : config,
+			"status" : status,
+			"price" : price,
+			"category" : category
+		}
+	}).then(function (r12){
+		console.log(r12.data)
+		document.getElementById("12").innerHTML = r12.data;
+	}).catch(function(){
+	console.log("예외 발생");
+	})
+}
+</script>
 </body>
 </html>
