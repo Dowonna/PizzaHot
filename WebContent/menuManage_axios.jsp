@@ -124,7 +124,7 @@ function menumove(name, config , status, price, category) {
 	let url = "Controller?command=menuManage&menu="+name+"&config="+config+"&status="+status+"&price="+price+"&category="+category;
 	//let test =v
 	console.log(url);
-	axios.get("test.jsp",{
+	axios.get("menuupdate.jsp",{
 		params :{
 			"name" : name,
 			"config" : config,
