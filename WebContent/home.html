@@ -37,7 +37,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a onclick="home()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw"></i>  Overview</a>
     <a onclick="menu()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-pizza-slice fa-fw"></i>  MENU</a>
     <a onclick="about()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullhorn fa-fw"></i>  ABOUT</a>
-    <a href="Controller?command=reservation" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar-plus fa-fw"></i>  Reservation</a>
+    <a onclick="reservation()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar-plus fa-fw"></i>  Reservation</a>
     <a onclick="search1()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Search</a>
     <a onclick="administer()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-shield fa-fw"></i>  Administer</a>
     </div>
@@ -82,7 +82,7 @@ function administer() {
 	})
 	
 }
-home()
+
 function home() {
 	axios.get("main.jsp").then(function (r12){
 			document.getElementById("11").innerHTML = r12.data;
@@ -94,7 +94,6 @@ function home() {
 
 function about() {
 	axios.get("about_axios.jsp").then(function (r12){
-		console.log(r12)
 		document.getElementById("11").innerHTML = r12.data
 	}).catch(function(){
 		console.log("예외 발생");
@@ -114,12 +113,23 @@ function search1() {
 function menu() {
 	axios.get("menu_axios.jsp").then(function (r12){
 			document.getElementById("11").innerHTML = r12.data;
+			document.getElementById("myLink").click();
 	}).catch(function(){
 		console.log("예외 발생");
 	})
 	
-}	
+}
+
+function reservation() {
+	axios.get("reservation.jsp").then(function (r12){
+		document.getElementById("11").innerHTML = r12.data
+		document.getElementById("myLink").click();
+	}).catch(function(){
+		console.log("예외 발생");
+	})
+}
 </script>
+
 <script>
 // Tabbed Menu
 function openMenu(evt, menuName) {
@@ -135,17 +145,73 @@ function openMenu(evt, menuName) {
   document.getElementById(menuName).style.display = "block";
   evt.currentTarget.firstElementChild.className += " w3-red";
 }
-document.getElementById("myLink").click();
-</script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8a5a2ad4464c88fa12ce8ec878b8ad0b"></script>
-	<script>
-		var container = document.getElementById('map');
-		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
-			level: 3
-		};
 
-		var map = new kakao.maps.Map(container, options);
-	</script>
+
+//basket
+var basket = [], cost=0;
+
+function item(menu, num, price) {
+	this.menu = menu;
+	this.num = num;
+	this.price = price;
+}
+
+item.prototype.toString = function itemToString(){
+	return this.menu + ',' + this.price + ',' + this.num + '_';
+};
+
+
+function addBasket(menu, price) {
+	let flag = false, index = 0;
+	for ( let i in basket) {
+		if (basket[i].menu === menu) {
+			index = i;
+			flag = true;
+			break;
+		}
+	}
+
+	if (flag) {
+		basket[index].num++;
+	} else {
+		basket.push(new item(menu, 1, price));
+	}
+
+	cost += price;
+	drawBasket();
+}
+
+function deleteBasket(menu) {
+	for ( let i in basket) {
+		if (basket[i].menu === menu) {
+			cost -= basket[i].price;
+			if (--basket[i].num === 0) {
+				basket.splice(i, 1);
+			}
+			break;
+		}
+	}
+	drawBasket();
+}
+
+function drawBasket(){
+	let basketTable = document.getElementById("basket");
+	basketTable.innerHTML="<tr><th width='110px'>Menu</th><th>number</th><th>price</th></tr>";
+
+	for (const data of basket) {
+		basketTable.innerHTML 
+		+= `<tr><td><a href="#" onclick="deleteBasket('`+data.menu +`')">`+data.menu+`</a></td><td>`+data.num+`</td><td>`+data.price+`</td></tr>`;
+	}
+	
+	document.getElementById("cost").innerText = `Total cost : ${cost}`;
+}
+
+function toRes(){
+	document.getElementById("basketValue").value = basket;
+	document.bk.submit();
+}
+
+</script>
+
 </body>
 </html>
