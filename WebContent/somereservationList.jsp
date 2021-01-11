@@ -36,7 +36,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
+<div id = "11" class="w3-main" style="margin-left:100px;margin-top:43px;">
 <br><br><br>
 <center>
 <h3>음식 list</h3>
@@ -69,5 +69,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <br><br><br>
 <a href="${pageContext.request.contextPath}/home.html">메인 화면 이동</a>
 </center>
+</div>
 </body>
 </html>

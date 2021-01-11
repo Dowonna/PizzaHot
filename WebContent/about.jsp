@@ -14,7 +14,7 @@
     <p>We are proud of our interiors.</p>
 
 <div id="map" style="width:500px;height:400px;">
-<img src="images/airport.PNG" style="width:500px;height:400px;">
+<img src="images/airport.PNG" style="width:500px;height:400px;" onclick="test()">
 </div>
 	
     <h1><b>Opening Hours</b></h1>
@@ -35,3 +35,8 @@
   </div>
 </div>
 </div>
+<script>
+function test(){
+	alert(1);
+}
+</script>
