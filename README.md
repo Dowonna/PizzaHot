@@ -50,11 +50,9 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 
 ## ✍️ Author
  
-
 | <img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/TY.PNG"> | <img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/MG.PNG"> | <img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/CH.PNG">  |
 |:---:|:---:|:---:|
 |:dancers: **최태열** <a href="https://github.com/ta-ye">Taeyeol Choi</a> | :gun: **김민건** <a href="https://github.com/alsrjs2441">Mingeon Kim</a> | :vhs: **김창훈** <a href="https://github.com/bbiku">Changhun Kim</a> |
-|:pizza: Team PizzaHot|||
 
 
   
