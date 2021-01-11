@@ -26,7 +26,7 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 
 | [test]Back-End | Front-End | Config |
 |------|---|---|
-|![eslint](https://img.shields.io/badge/eslint-^7.11.0-yellow?logo=eslint) ![](https://img.shields.io/badge/Oracle%20DB-SE-red) ![](https://img.shields.io/badge/JPA-v2.1-yellow) | ![](https://img.shields.io/badge/Servlet%20JSP-v-red) ![node-red](https://img.shields.io/badge/Node--RED-1.2-red)|![Github](https://img.shields.io/badge/Github-%5E-lightgrey)|
+|![tomcat](https://img.shields.io/badge/Apache%20Tomcat-v8.5-yellow) ![eslint](https://img.shields.io/badge/ESLint-v7.17.0-purple) ![](https://img.shields.io/badge/Oracle%20DB-SE-red) ![](https://img.shields.io/badge/JPA-v2.1-yellow) | ![](https://img.shields.io/badge/Servlet%20JSP-v-red) ![node-red](https://img.shields.io/badge/Node--RED-1.2-red)|![Github](https://img.shields.io/badge/Github-%5E-lightgrey)|
 
 ## 🤖 ChatBot
   - 예약 정보를 Node-Red와 Telegram 연동해서 보냈습니다.
