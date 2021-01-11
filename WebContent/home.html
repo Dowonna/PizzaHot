@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/f51c1b79cc.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7866627ad49b15f17c920616f2c4551"></script>	// key
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .bgimg {
@@ -114,8 +115,17 @@ function about() {
         document.getElementById("11").innerHTML = r12.data
     }).catch(function() {
         console.log("예외 발생");
-    })
-	
+    }).then(drawMap);
+}
+
+function drawMap(){
+	// eslint-disable-next-line no-undef
+	var container = document.getElementById('map');
+	var options = {
+		center: new kakao.maps.LatLng(33.5072708, 126.4929465),
+		level: 3
+	};
+	var map = new kakao.maps.Map(container, options);
 }
 
 // eslint-disable-next-line no-unused-vars
