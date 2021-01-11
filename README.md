@@ -24,7 +24,7 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 ## 💡 Technologies Used
 <!--<img src = "https://i.imgur.com/0D3JHvS.jpg" width="70%">-->
 
-| [test]Back-End | Front-End | Config |
+| :back: Back-End | :globe_with_meridians: Front-End | :package: Config |
 |------|---|---|
 |![tomcat](https://img.shields.io/badge/Apache%20Tomcat-v8.5.61-yellow) ![eslint](https://img.shields.io/badge/ESLint-v7.17.0-purple) ![](https://img.shields.io/badge/Oracle%20DB-SE-red) ![](https://img.shields.io/badge/JPA-v2.1-yellow) | ![Servlet](https://img.shields.io/badge/Servlet-v3.1-red) ![JSP](https://img.shields.io/badge/JSP-v2.3-red) ![node-red](https://img.shields.io/badge/Node--RED-1.2-red)|![Github](https://img.shields.io/badge/Github-%5E-lightgrey)|
 
