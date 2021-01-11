@@ -13,9 +13,17 @@
     <img src="images/TY.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"><img src="images/CH.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"><img src="images/MG.PNG" style="width:150px; height: 100px" class="w3-circle w3-right" alt="Chef"></p>
     <p>We are proud of our interiors.</p>
 
-<div id="map" style="width:500px;height:400px;">
-<img src="images/airport.PNG" style="width:500px;height:400px;" onclick="test()">
-</div>
+	<div id="map" style="width:500px;height:400px;"></div>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7866627ad49b15f17c920616f2c4551"></script>
+		<script>
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(33.450701, 126.570667),
+				level: 3
+			};
+	
+			var map = new kakao.maps.Map(container, options);
+		</script>
 	
     <h1><b>Opening Hours</b></h1>
     

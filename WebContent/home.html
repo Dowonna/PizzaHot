@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/f51c1b79cc.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7866627ad49b15f17c920616f2c4551"></script>	// key
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .bgimg {
@@ -60,24 +61,23 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 // Toggle between showing and hiding the sidebar, and add overlay effect
 // eslint-disable-next-line no-unused-vars
 function w3_open() {
-    var mySidebar = document.getElementById("mySidebar");
-    var overlayBg = document.getElementById("myOverlay");
+	let mySidebar = document.getElementById("mySidebar");
+	let overlayBg = document.getElementById("myOverlay");
 	
-  
-  	if (mySidebar.style.display === 'block') {
-  		mySidebar.style.display = 'none';
-  		overlayBg.style.display = "none";
-  	} else {
-    	mySidebar.style.display = 'block';
-    	overlayBg.style.display = "block";
+	if (mySidebar.style.display === 'block') {
+		mySidebar.style.display = 'none';
+		overlayBg.style.display = "none";
+	} else {
+		mySidebar.style.display = 'block';
+		overlayBg.style.display = "block";
     }
 }
 
 // Close the sidebar with the close button
 // eslint-disable-next-line no-unused-vars
 function w3_close() {
-    var mySidebar = document.getElementById("mySidebar");
-    var overlayBg = document.getElementById("myOverlay");
+	let mySidebar = document.getElementById("mySidebar");
+	let overlayBg = document.getElementById("myOverlay");
 	
     console.log(mySidebar.style.display);
     mySidebar.style.display = "none";
@@ -118,10 +118,20 @@ function about() {
         document.getElementById("11").innerHTML = r12.data
     }).catch(function() {
         console.log("예외 발생");
-    })
-	
+    }).then(drawMap);
 }
 
+function drawMap(){
+	// eslint-disable-next-line no-undef
+	var container = document.getElementById('map');
+	var options = {
+		center: new kakao.maps.LatLng(33.5072708, 126.4929465),
+		level: 3
+	};
+	var map = new kakao.maps.Map(container, options);
+}
+
+// eslint-disable-next-line no-unused-vars
 function search1() {
     // eslint-disable-next-line no-undef
     axios.get("search.jsp").then(function (r12) {
@@ -130,9 +140,10 @@ function search1() {
     }).catch(function() {
         console.log("예외 발생");
     })
-	
 }
 
+
+// eslint-disable-next-line no-unused-vars
 function menu() {
     // eslint-disable-next-line no-undef
     axios.get("menu.jsp").then(function (r12) {
@@ -145,33 +156,36 @@ function menu() {
 	
 }
 
+// eslint-disable-next-line no-unused-vars
 function reservation() {
-    axios.get("reservation.jsp").then(function (r12) {
-    	basket = [], cost=0;
-        document.getElementById("11").innerHTML = r12.data
-        document.getElementById("myLink").click();
-    }).catch(function() {
-        console.log("예외 발생");
-    })
+<<<<<<< HEAD
+	// eslint-disable-next-line no-undef
+	axios.get("reservation.jsp").then(function (r12){
+		document.getElementById("11").innerHTML = r12.data
+		document.getElementById("myLink").click();
+	}).catch(function(){
+		console.log("예외 발생");
+	})
 }
 
 // Tabbed Menu
+// eslint-disable-next-line no-unused-vars
 function openMenu(evt, menuName) {
-    var i, x, tablinks;
-    x = document.getElementsByClassName("menu");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < x.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-    }
-    document.getElementById(menuName).style.display = "block";
-    evt.currentTarget.firstElementChild.className += " w3-red";
+  let i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
 }
 
 //basket
-var basket = [], cost=0;
+let basket = [], cost=0;
 
 function item(menu, num, price) {
     this.menu = menu;
@@ -184,6 +198,7 @@ item.prototype.toString = function itemToString() {
 };
 
 
+// eslint-disable-next-line no-unused-vars
 function addBasket(menu, price) {
     let flag = false, index = 0;
     for ( let i in basket) {
@@ -204,6 +219,7 @@ function addBasket(menu, price) {
     drawBasket();
 }
 
+// eslint-disable-next-line no-unused-vars
 function deleteBasket(menu) {
     for ( let i in basket) {
         if (basket[i].menu === menu) {
@@ -229,9 +245,11 @@ function drawBasket() {
     document.getElementById("cost").innerText = `Total cost : ${cost}`;
 }
 
-function toRes() {
-    document.getElementById("basketValue").value = basket;
-    document.bk.submit();
+
+// eslint-disable-next-line no-unused-vars
+function toRes(){
+	document.getElementById("basketValue").value = basket;
+	document.bk.submit();
 }
 
 </script>
