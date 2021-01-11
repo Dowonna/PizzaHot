@@ -39,8 +39,8 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 ## ✍️ Author
  Team PizzaHot
 | <img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/TY.PNG" width="70%"> | <img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/MG.PNG" width="70%"> | <img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/CH.PNG" width="70%">  |
-|------|---|---|
-|<h3>:dancers: 최태열 <a href="https://github.com/ta-ye">Taeyeol Choi</a> </h3>|<h3>:gun: 김민건 <a href="https://github.com/alsrjs2441">Mingeon Kim</a> </h3>|<h3>:vhs: 김창훈 <a href="https://github.com/bbiku">Changhun Kim</a> </h3>|
+|:---:|:---:|:---:|
+|:dancers: **최태열** <a href="https://github.com/ta-ye">Taeyeol Choi</a>|<h3>:gun: 김민건 <a href="https://github.com/alsrjs2441">Mingeon Kim</a> </h3>|<h3>:vhs: 김창훈 <a href="https://github.com/bbiku">Changhun Kim</a> </h3>|
 
   
 ## 🔥 Issues
