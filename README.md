@@ -39,7 +39,7 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 | <img src = "https://i.imgur.com/Iq1q4JL.gif"> | 
 
 | Menu | About |
-|------|------|
+|:------:|:------:|
 | <img src = "https://i.imgur.com/qgkRdDG.gif"> | <img src = "https://i.imgur.com/OoMWInA.gif"> |
 | Reservation | Send Telegram |
 | <img src = "https://i.imgur.com/aU1JjsN.gif"> | <img src = "https://i.imgur.com/OoMWInA.gif"> |
