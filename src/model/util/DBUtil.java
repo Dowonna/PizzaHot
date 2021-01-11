@@ -1,17 +1,12 @@
-﻿/* ???
- * 1. JDBC URL - oracle.jdbc.driver.OracleDriver
- */
-package model.util;
+﻿package model.util;
 
-import java.io.FileInputStream;
 import java.util.Properties;
-
 
 public class DBUtil {
 	private static Properties admin = new Properties();
 	static {
 		try {
-			admin.load(new FileInputStream("admin.properties"));
+			admin.load(DBUtil.class.getResourceAsStream("/admin.properties"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

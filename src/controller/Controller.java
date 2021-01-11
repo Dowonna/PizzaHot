@@ -152,8 +152,7 @@ public class Controller extends HttpServlet {
 			request.getSession().setAttribute("user", true);
 			url = "Controller?command=getAllguests";
 		} else {
-			//String e = "알맞은 로그인 정보가 아닙니다";
-			String e = DBUtil.getAdminId() + DBUtil.getAdminPw();
+			String e = "알맞은 로그인 정보가 아닙니다";
 			request.setAttribute("errorMsg", e);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
@@ -281,7 +280,7 @@ public class Controller extends HttpServlet {
 		}
 		response.sendRedirect(url);
 	}
-
+	
 	public boolean adminCheck(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		if (request.getSession().getAttribute("user") == null) {
