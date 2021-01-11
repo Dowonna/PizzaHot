@@ -55,10 +55,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 // Toggle between showing and hiding the sidebar, and add overlay effect
+// eslint-disable-next-line no-unused-vars
 function w3_open() {
-	var mySidebar = document.getElementById("mySidebar");
-	var overlayBg = document.getElementById("myOverlay");
+    var mySidebar = document.getElementById("mySidebar");
+    var overlayBg = document.getElementById("myOverlay");
 	
+  
   	if (mySidebar.style.display === 'block') {
   		mySidebar.style.display = 'none';
   		overlayBg.style.display = "none";
@@ -69,150 +71,164 @@ function w3_open() {
 }
 
 // Close the sidebar with the close button
+// eslint-disable-next-line no-unused-vars
 function w3_close() {
-	var mySidebar = document.getElementById("mySidebar");
-	var overlayBg = document.getElementById("myOverlay");
+    var mySidebar = document.getElementById("mySidebar");
+    var overlayBg = document.getElementById("myOverlay");
 	
-	console.log(mySidebar.style.display);
-	mySidebar.style.display = "none";
-	overlayBg.style.display = "none";
+    console.log(mySidebar.style.display);
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
 }
 
 
 //page move
 home()
 
+// eslint-disable-next-line no-unused-vars
 function administer() {
-	axios.get("admin.jsp").then(function (r12){
-			document.getElementById("11").innerHTML = r12.data;
-	}).catch(function(){
-		console.log("예외 발생");
-	})
+    // eslint-disable-next-line no-undef
+    axios.get("admin.jsp").then(function (r12) {
+    	basket = [],cost=0;
+        document.getElementById("11").innerHTML = r12.data;
+    }).catch(function() {
+        console.log("예외 발생");
+    })
 	
 }
 
 function home() {
-	axios.get("main.jsp").then(function (r12){
-			document.getElementById("11").innerHTML = r12.data;
-	}).catch(function(){
-		console.log("예외 발생");
-	})
+    // eslint-disable-next-line no-undef
+    axios.get("main.jsp").then(function (r12) {
+    	basket = [],cost=0;
+        document.getElementById("11").innerHTML = r12.data;
+    }).catch(function() {
+        console.log("예외 발생");
+    })
 }
 
+
 function about() {
-	axios.get("about.jsp").then(function (r12){
-		document.getElementById("11").innerHTML = r12.data
-	}).catch(function(){
-		console.log("예외 발생");
-	})
+    // eslint-disable-next-line no-undef
+    axios.get("about.jsp").then(function (r12) {
+    	basket = [],cost=0;
+        document.getElementById("11").innerHTML = r12.data
+    }).catch(function() {
+        console.log("예외 발생");
+    })
 	
 }
 
 function search1() {
-	axios.get("search.jsp").then(function (r12){
-			document.getElementById("11").innerHTML = r12.data;
-	}).catch(function(){
-		console.log("예외 발생");
-	})
+    // eslint-disable-next-line no-undef
+    axios.get("search.jsp").then(function (r12) {
+    	basket = [], cost=0;
+        document.getElementById("11").innerHTML = r12.data;
+    }).catch(function() {
+        console.log("예외 발생");
+    })
 	
 }
 
 function menu() {
-	axios.get("menu.jsp").then(function (r12){
-			document.getElementById("11").innerHTML = r12.data;
-			document.getElementById("myLink").click();
-	}).catch(function(){
-		console.log("예외 발생");
-	})
+    // eslint-disable-next-line no-undef
+    axios.get("menu.jsp").then(function (r12) {
+    	basket = [], cost=0;
+        document.getElementById("11").innerHTML = r12.data;
+        document.getElementById("myLink").click();
+    }).catch(function() {
+        console.log("예외 발생");
+    })
 	
 }
 
 function reservation() {
-	axios.get("reservation.jsp").then(function (r12){
-		document.getElementById("11").innerHTML = r12.data
-		document.getElementById("myLink").click();
-	}).catch(function(){
-		console.log("예외 발생");
-	})
+    axios.get("reservation.jsp").then(function (r12) {
+    	basket = [], cost=0;
+        document.getElementById("11").innerHTML = r12.data
+        document.getElementById("myLink").click();
+    }).catch(function() {
+        console.log("예외 발생");
+    })
 }
 
 // Tabbed Menu
 function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-red";
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-red";
 }
 
 //basket
 var basket = [], cost=0;
 
 function item(menu, num, price) {
-	this.menu = menu;
-	this.num = num;
-	this.price = price;
+    this.menu = menu;
+    this.num = num;
+    this.price = price;
 }
 
-item.prototype.toString = function itemToString(){
-	return this.menu + ',' + this.price + ',' + this.num + '_';
+item.prototype.toString = function itemToString() {
+    return this.menu + ',' + this.price + ',' + this.num + '_';
 };
 
 
 function addBasket(menu, price) {
-	let flag = false, index = 0;
-	for ( let i in basket) {
-		if (basket[i].menu === menu) {
-			index = i;
-			flag = true;
-			break;
-		}
-	}
+    let flag = false, index = 0;
+    for ( let i in basket) {
+        if (basket[i].menu === menu) {
+            index = i;
+            flag = true;
+            break;
+        }
+    }
 
-	if (flag) {
-		basket[index].num++;
-	} else {
-		basket.push(new item(menu, 1, price));
-	}
+    if (flag) {
+        basket[index].num++;
+    } else {
+        basket.push(new item(menu, 1, price));
+    }
 
-	cost += price;
-	drawBasket();
+    cost += price;
+    drawBasket();
 }
 
 function deleteBasket(menu) {
-	for ( let i in basket) {
-		if (basket[i].menu === menu) {
-			cost -= basket[i].price;
-			if (--basket[i].num === 0) {
-				basket.splice(i, 1);
-			}
-			break;
-		}
-	}
-	drawBasket();
+    for ( let i in basket) {
+        if (basket[i].menu === menu) {
+            cost -= basket[i].price;
+            if (--basket[i].num === 0) {
+                basket.splice(i, 1);
+            }
+            break;
+        }
+    }
+    drawBasket();
 }
 
-function drawBasket(){
-	let basketTable = document.getElementById("basket");
-	basketTable.innerHTML="<tr><th width='110px'>Menu</th><th>number</th><th>price</th></tr>";
+function drawBasket() {
+    let basketTable = document.getElementById("basket");
+    basketTable.innerHTML="<tr><th width='110px'>Menu</th><th>number</th><th>price</th></tr>";
 
-	for (const data of basket) {
-		basketTable.innerHTML 
+    for (const data of basket) {
+        basketTable.innerHTML 
 		+= `<tr><td><a href="#" onclick="deleteBasket('`+data.menu +`')">`+data.menu+`</a></td><td>`+data.num+`</td><td>`+data.price+`</td></tr>`;
-	}
+    }
 	
-	document.getElementById("cost").innerText = `Total cost : ${cost}`;
+    document.getElementById("cost").innerText = `Total cost : ${cost}`;
 }
 
-function toRes(){
-	document.getElementById("basketValue").value = basket;
-	document.bk.submit();
+function toRes() {
+    document.getElementById("basketValue").value = basket;
+    document.bk.submit();
 }
 
 </script>
