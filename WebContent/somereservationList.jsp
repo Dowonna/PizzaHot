@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/f51c1b79cc.js" crossorigin="anonymous"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
@@ -29,15 +30,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
     <h5>Dashboard</h5>
   </div>
-  <div class="w3-bar-block">
-	<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a onclick="home()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw"></i>  Overview</a>
-    <a onclick="menu()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-pizza-slice fa-fw"></i>  MENU</a>
-    <a onclick="about()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullhorn fa-fw"></i>  ABOUT</a>
-    <a onclick="reservation()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar-plus fa-fw"></i>  Reservation</a>
-    <a onclick="search1()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Search</a>
-    <a onclick="home.html/administer()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-shield fa-fw"></i>  Administer</a>
-    </div>
+  <jsp:include page="nav.jsp"/>
 </nav>
 
 

@@ -6,7 +6,7 @@
 		<h3>로그인이 필요한 페이지입니다.</h3>
 		<hr>
 		<p>
-		<form action="Controller" Method="get">
+		<form action="Controller" Method="post">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름 : <input
 				type="text" name="Name"> <br> 전화번호 : <input
 				type="password" name="Phone"> <br> <input type="hidden"

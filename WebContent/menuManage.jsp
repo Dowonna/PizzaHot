@@ -4,6 +4,9 @@
 <%@page import="model.Service"%>
 <% String url = application.getContextPath() + "/"; %>
 
+<<c:if test="${empty sessionScope.user}">
+	<c:redirect url="home.html"/> 
+</c:if>
 <!DOCTYPE html>
 <html>
 <title>PizzaHot</title>
@@ -12,6 +15,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/f51c1b79cc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -38,15 +42,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container">
     <h5>Dashboard</h5>
   </div>
-  <div class="w3-bar-block">
-	<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a onclick="home()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw"></i>  Overview</a>
-    <a onclick="menu()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-pizza-slice fa-fw"></i>  MENU</a>
-    <a onclick="about()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullhorn fa-fw"></i>  ABOUT</a>
-    <a href="Controller?command=reservation" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar-plus fa-fw"></i>  Reservation</a>
-    <a onclick="search1()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-search fa-fw"></i>  Search</a>
-    <a onclick="administer()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-shield fa-fw"></i>  Administer</a>
-    </div>
+  <jsp:include page="nav.jsp"/>
 </nav>
 
 
@@ -56,7 +52,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 <div class="w3-display-container w3-center">
- <%
+ 	<%
 			Service instance = Service.getInstance();
 			request.setAttribute("menuAll", instance.getAllMenu());
 	%>
