@@ -35,7 +35,9 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 
 ## :movie_camera: 시연영상
 <img src="https://i.imgur.com/ulZmvDX.gif" width="90%"></img>
-
+<br>
+![img](https://i.imgur.com/ulZmvDX.gif)
+<br>
 <!--[![시연영상](https://img.youtube.com/vi/l624RcGCe2M/0.jpg)](https://www.youtube.com/embed/l624RcGCe2M)-->
 
 ## ✍️ Author
