@@ -23,6 +23,7 @@
 
 	<!-- !PAGE CONTENT! -->
 	<div class="w3-main" style="margin-left: 100px; margin-top: 43px;">
+	
 		<%
 			Service instance = Service.getInstance();
 			request.setAttribute("menuAll", instance.getAllMenu());
@@ -114,5 +115,6 @@
 
 		</div>
 	</div>
+	
 </body>
 </html>

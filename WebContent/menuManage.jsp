@@ -115,7 +115,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<a href="${pageContext.request.contextPath}/guestList.jsp">뒤로가기</a>
 </div>
 </div>
-<%-- eslint-begin --%>
+%-- eslint-begin --%>
 <script>
 function menumove(name, config , status, price, category) {
 	let url = "Controller?command=menuManage&menu="+name+"&config="+config+"&status="+status+"&price="+price+"&category="+category;
@@ -135,6 +135,6 @@ function menumove(name, config , status, price, category) {
 	}). catch(function() {console.log( "예외 발생" );})
 }
 </script>
-<%-- eslint-end --%>
+%-- eslint-end --%>
 </body>
 </html>
