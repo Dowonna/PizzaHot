@@ -2,31 +2,31 @@
 
 PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가능한 홈페이지입니다.
 
-<img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/pizza_home.jpg" width="60%">
+<img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/pizza_home.jpg" width="70%">
 
-
-| [test]Back-End | Front-End | Config |
-|------|---|---|
-|![eslint](https://img.shields.io/badge/eslint-^7.11.0-yellow?logo=eslint) ![](https://img.shields.io/badge/Oracle%20DB-SE-red) ![](https://img.shields.io/badge/JPA-v2.1-yellow) | ![](https://img.shields.io/badge/Servlet%20JSP-v-red) ![node-red](https://img.shields.io/badge/Node--RED-1.2-red)|![Github](https://img.shields.io/badge/Github-%5E-lightgrey)|
 ## Intruduction
 - 이탈리아 음식으로 유명한 "Pizza"! 한국에서도 대표적인 술안주로 자리매김하게 되면서 많은 피자가게가 오픈되었습니다.
 - "PizzaHot"은 피자전문 레스토랑을 컨셉으로 한 음식점이 오픈되었다는 가정하에, 가게 홍보를 위한 홈페이지 제작을 시작하게 되었습니다.
 - 홈페이지에는 판매메뉴 및 위치안내 그리고 온라인 예약시스템 구현을 목표로 하였습니다.
 
 ## :eyes: Structure
-![ERD](https://user-images.githubusercontent.com/72329183/103186507-17078e00-4904-11eb-950b-395b6766f0c8.PNG)
+<img src = "https://user-images.githubusercontent.com/72329183/103186507-17078e00-4904-11eb-950b-395b6766f0c8.PNG" width="70%">
 
 ## :hammer_and_wrench: Service Process
-![serviceProcess](https://user-images.githubusercontent.com/72329183/103187885-892ea180-4909-11eb-8b38-70907afca962.PNG)
+<img src = "https://user-images.githubusercontent.com/72329183/103187885-892ea180-4909-11eb-8b38-70907afca962.PNG" width="70%">
+
 | :closed_lock_with_key: 관리자 | :family: 회원 |
 |------|---|
 |- 메뉴 관리 (추가, 삭제, 업데이트, 확인) <br> - 예약자 관리 |   - 메뉴 확인 <br> - 예약 메뉴 선택 <br> - 예약 일자 선택 후 안내 문자 받기(Telegram) |
 
 
 
-
 ## 💡 Technologies Used
-![new page1](https://i.imgur.com/0D3JHvS.jpg)
+<!--<img src = "https://i.imgur.com/0D3JHvS.jpg" width="70%">-->
+
+| [test]Back-End | Front-End | Config |
+|------|---|---|
+|![eslint](https://img.shields.io/badge/eslint-^7.11.0-yellow?logo=eslint) ![](https://img.shields.io/badge/Oracle%20DB-SE-red) ![](https://img.shields.io/badge/JPA-v2.1-yellow) | ![](https://img.shields.io/badge/Servlet%20JSP-v-red) ![node-red](https://img.shields.io/badge/Node--RED-1.2-red)|![Github](https://img.shields.io/badge/Github-%5E-lightgrey)|
 
 ## 🤖 ChatBot
   - 예약 정보를 Node-Red와 Telegram 연동해서 보냈습니다.
