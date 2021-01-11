@@ -115,6 +115,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<a href="${pageContext.request.contextPath}/guestList.jsp">뒤로가기</a>
 </div>
 </div>
+
 <script>
 function menumove(name, config , status, price, category) {
 	let url = "Controller?command=menuManage&menu="+name+"&config="+config+"&status="+status+"&price="+price+"&category="+category;

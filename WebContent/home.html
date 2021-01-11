@@ -55,23 +55,25 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 // Toggle between showing and hiding the sidebar, and add overlay effect
+// eslint-disable-next-line no-unused-vars
 function w3_open() {
-	var mySidebar = document.getElementById("mySidebar");
-	var overlayBg = document.getElementById("myOverlay");
+	let mySidebar = document.getElementById("mySidebar");
+	let overlayBg = document.getElementById("myOverlay");
 	
-  	if (mySidebar.style.display === 'block') {
-  		mySidebar.style.display = 'none';
-  		overlayBg.style.display = "none";
-  	} else {
-    	mySidebar.style.display = 'block';
-    	overlayBg.style.display = "block";
+	if (mySidebar.style.display === 'block') {
+		mySidebar.style.display = 'none';
+		overlayBg.style.display = "none";
+	} else {
+		mySidebar.style.display = 'block';
+		overlayBg.style.display = "block";
     }
 }
 
 // Close the sidebar with the close button
+// eslint-disable-next-line no-unused-vars
 function w3_close() {
-	var mySidebar = document.getElementById("mySidebar");
-	var overlayBg = document.getElementById("myOverlay");
+	let mySidebar = document.getElementById("mySidebar");
+	let overlayBg = document.getElementById("myOverlay");
 	
 	console.log(mySidebar.style.display);
 	mySidebar.style.display = "none";
@@ -82,7 +84,9 @@ function w3_close() {
 //page move
 home()
 
+// eslint-disable-next-line no-unused-vars
 function administer() {
+	// eslint-disable-next-line no-undef
 	axios.get("admin.jsp").then(function (r12){
 			document.getElementById("11").innerHTML = r12.data;
 	}).catch(function(){
@@ -92,6 +96,7 @@ function administer() {
 }
 
 function home() {
+	// eslint-disable-next-line no-undef
 	axios.get("main.jsp").then(function (r12){
 			document.getElementById("11").innerHTML = r12.data;
 	}).catch(function(){
@@ -99,7 +104,9 @@ function home() {
 	})
 }
 
+// eslint-disable-next-line no-unused-vars
 function about() {
+	// eslint-disable-next-line no-undef
 	axios.get("about.jsp").then(function (r12){
 		document.getElementById("11").innerHTML = r12.data
 	}).catch(function(){
@@ -108,7 +115,9 @@ function about() {
 	
 }
 
+// eslint-disable-next-line no-unused-vars
 function search1() {
+	// eslint-disable-next-line no-undef
 	axios.get("search.jsp").then(function (r12){
 			document.getElementById("11").innerHTML = r12.data;
 	}).catch(function(){
@@ -117,7 +126,10 @@ function search1() {
 	
 }
 
+
+// eslint-disable-next-line no-unused-vars
 function menu() {
+	// eslint-disable-next-line no-undef
 	axios.get("menu.jsp").then(function (r12){
 			document.getElementById("11").innerHTML = r12.data;
 			document.getElementById("myLink").click();
@@ -127,7 +139,9 @@ function menu() {
 	
 }
 
+// eslint-disable-next-line no-unused-vars
 function reservation() {
+	// eslint-disable-next-line no-undef
 	axios.get("reservation.jsp").then(function (r12){
 		document.getElementById("11").innerHTML = r12.data
 		document.getElementById("myLink").click();
@@ -137,8 +151,9 @@ function reservation() {
 }
 
 // Tabbed Menu
+// eslint-disable-next-line no-unused-vars
 function openMenu(evt, menuName) {
-  var i, x, tablinks;
+  let i, x, tablinks;
   x = document.getElementsByClassName("menu");
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
@@ -152,7 +167,7 @@ function openMenu(evt, menuName) {
 }
 
 //basket
-var basket = [], cost=0;
+let basket = [], cost=0;
 
 function item(menu, num, price) {
 	this.menu = menu;
@@ -165,6 +180,7 @@ item.prototype.toString = function itemToString(){
 };
 
 
+// eslint-disable-next-line no-unused-vars
 function addBasket(menu, price) {
 	let flag = false, index = 0;
 	for ( let i in basket) {
@@ -185,6 +201,7 @@ function addBasket(menu, price) {
 	drawBasket();
 }
 
+// eslint-disable-next-line no-unused-vars
 function deleteBasket(menu) {
 	for ( let i in basket) {
 		if (basket[i].menu === menu) {
@@ -210,6 +227,7 @@ function drawBasket(){
 	document.getElementById("cost").innerText = `Total cost : ${cost}`;
 }
 
+// eslint-disable-next-line no-unused-vars
 function toRes(){
 	document.getElementById("basketValue").value = basket;
 	document.bk.submit();
