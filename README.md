@@ -16,15 +16,12 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 
 ## :hammer_and_wrench: Service Process
 ![serviceProcess](https://user-images.githubusercontent.com/72329183/103187885-892ea180-4909-11eb-8b38-70907afca962.PNG)
+| :closed_lock_with_key: 관리자 | :family: 회원 |
+|------|---|
+|- 메뉴 관리 (추가, 삭제, 업데이트, 확인) <br> - 예약자 관리 |   - 메뉴 확인 <br> - 예약 메뉴 선택 <br> - 예약 일자 선택 후 안내 문자 받기(Telegram) |
 
-:closed_lock_with_key: 관리자
-  - 메뉴 관리 (추가, 삭제, 업데이트, 확인)
-  - 예약자 관리
 
-:family: 회원
-  - 메뉴 확인
-  - 예약 메뉴 선택
-  - 예약 일자 선택 후 안내 문자 받기(Telegram)
+
 
 ## 💡 Technologies Used
 ![new page1](https://i.imgur.com/0D3JHvS.jpg)
