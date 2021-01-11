@@ -9,14 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.GuestDAO;
-import model.ReservationDAO;
 import model.Service;
 import model.dto.GuestDTO;
 import model.dto.MenuDTO;
-
+import model.util.DBUtil;
+      
 //http://localhost/project_pizzahot/Controller
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
@@ -60,6 +59,8 @@ public class Controller extends HttpServlet {
 				addReservation(request, response);
 			} else if (command.equals("getSomeReservation")) {
 				getSomeReservation(request, response);
+			} else if (command.equals("home")) {
+				home(request, response);
 			}
 		} catch (Exception s) {
 			request.setAttribute("errorMsg", s.getMessage());
@@ -103,7 +104,7 @@ public class Controller extends HttpServlet {
 				String name = request.getParameter("Name");
 				String phone = request.getParameter("Phone");
 				request.setAttribute("guestAll", GuestDAO.getsomeGuest(name, phone));
-				
+
 				url = "someList.jsp";
 			} catch (Exception e) {
 				request.setAttribute("errorMsg", e.getMessage());
@@ -119,7 +120,7 @@ public class Controller extends HttpServlet {
 		if (adminCheck(request, response)) {
 			try {
 				request.setAttribute("guestAll", Service.getAllguests());
-				
+
 				url = "guestList.jsp";
 			} catch (Exception e) {
 				request.setAttribute("errorMsg", e.getMessage());
@@ -147,13 +148,12 @@ public class Controller extends HttpServlet {
 	public void verification(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
-		//hot/11 db or web.xml 에 데이터 저장 
-		//? 
-		if (request.getParameter("id").equals("hot") && request.getParameter("pw").equals("11")) {
+		if (request.getParameter("id").equals(DBUtil.getAdminId()) && request.getParameter("pw").equals(DBUtil.getAdminPw())) {
 			request.getSession().setAttribute("user", true);
 			url = "Controller?command=getAllguests";
 		} else {
-			String e = "알맞은 로그인 정보가 아닙니다";
+			//String e = "알맞은 로그인 정보가 아닙니다";
+			String e = DBUtil.getAdminId() + DBUtil.getAdminPw();
 			request.setAttribute("errorMsg", e);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
@@ -184,15 +184,15 @@ public class Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String url = "showError.jsp";
 		if (adminCheck(request, response)) {
-		try {
-			instance.deleteMenu(request.getParameter("menu"));
-			request.setAttribute("menuAll", instance.getAllMenu());
-			url = "menuManage.jsp";
-		} catch (Exception s) {
-			request.setAttribute("errorMsg", s.getMessage());
-			s.printStackTrace();
-		}
-		request.getRequestDispatcher(url).forward(request, response);
+			try {
+				instance.deleteMenu(request.getParameter("menu"));
+				request.setAttribute("menuAll", instance.getAllMenu());
+				url = "menuManage.jsp";
+			} catch (Exception s) {
+				request.setAttribute("errorMsg", s.getMessage());
+				s.printStackTrace();
+			}
+			request.getRequestDispatcher(url).forward(request, response);
 		}
 	}
 
@@ -200,36 +200,36 @@ public class Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String url = "showError.jsp";
 		if (adminCheck(request, response)) {
-		try {
-			String name = request.getParameter("name");
-			name = name.replaceAll("'", "&apos;");
-			instance.addMenu(new MenuDTO(name, request.getParameter("config"), request.getParameter("status"),
-					request.getParameter("category"), Double.parseDouble(request.getParameter("price"))));
-			request.setAttribute("menuAll", instance.getAllMenu());
-			url = "menuManage.jsp";
-		} catch (Exception s) {
-			request.setAttribute("errorMsg", s.getMessage());
-			s.printStackTrace();
-		}
-		request.getRequestDispatcher(url).forward(request, response);
+			try {
+				String name = request.getParameter("name");
+				name = name.replaceAll("'", "&apos;");
+				instance.addMenu(new MenuDTO(name, request.getParameter("config"), request.getParameter("status"),
+						request.getParameter("category"), Double.parseDouble(request.getParameter("price"))));
+				request.setAttribute("menuAll", instance.getAllMenu());
+				url = "menuManage.jsp";
+			} catch (Exception s) {
+				request.setAttribute("errorMsg", s.getMessage());
+				s.printStackTrace();
+			}
+			request.getRequestDispatcher(url).forward(request, response);
 		}
 	}
 
 	public void menuUpdate(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
-		
-		if(adminCheck(request, response)) {
-		try {
-			instance.updateMenu(request.getParameter("menu"), request.getParameter("status"),
-					Double.parseDouble(request.getParameter("price")));
-			request.setAttribute("menuAll", instance.getAllMenu());
-			url = "menuManage.jsp";
-		} catch (Exception s) {
-			request.setAttribute("errorMsg", s.getMessage());
-			s.printStackTrace();
-		}
-		request.getRequestDispatcher(url).forward(request, response);
+
+		if (adminCheck(request, response)) {
+			try {
+				instance.updateMenu(request.getParameter("menu"), request.getParameter("status"),
+						Double.parseDouble(request.getParameter("price")));
+				request.setAttribute("menuAll", instance.getAllMenu());
+				url = "menuManage.jsp";
+			} catch (Exception s) {
+				request.setAttribute("errorMsg", s.getMessage());
+				s.printStackTrace();
+			}
+			request.getRequestDispatcher(url).forward(request, response);
 		}
 	}
 
@@ -257,17 +257,29 @@ public class Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String url = "showError.jsp";
 		if (adminCheck(request, response)) {
+			try {
+				String temp = request.getParameter("id");
+				int id = Integer.parseInt(temp);
+				request.setAttribute("reservationAll", Service.getSomeReservation(id));
+				url = "somereservationList.jsp";
+			} catch (Exception e) {
+				request.setAttribute("errorMsg", e.getMessage());
+				e.printStackTrace();
+			}
+			request.getRequestDispatcher(url).forward(request, response);
+		}
+	}
+
+	public void home(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String url = "showError.jsp";
 		try {
-			String temp = request.getParameter("id");
-			int id = Integer.parseInt(temp);
-			request.setAttribute("reservationAll", Service.getSomeReservation(id));
-			url = "somereservationList.jsp";
+			url = "home.html";
+			request.getSession().removeAttribute("user");
 		} catch (Exception e) {
 			request.setAttribute("errorMsg", e.getMessage());
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher(url).forward(request, response);
-		}
+		response.sendRedirect(url);
 	}
 
 	public boolean adminCheck(HttpServletRequest request, HttpServletResponse response)

@@ -3,58 +3,25 @@
  */
 package model.util;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.FileInputStream;
+import java.util.Properties;
+
 
 public class DBUtil {
+	private static Properties admin = new Properties();
 	static {
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException c) {
-			c.printStackTrace();
+			admin.load(new FileInputStream("admin.properties"));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-
-	public static Connection getConnection() throws SQLException {
-		return DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe", "SCOTT", "TIGER");
+	
+	public static String getAdminId() {
+		return admin.getProperty("admin.id");
 	}
-
-	// DML용
-	public static void close(Connection con, Statement stmt) {
-		try {
-			if (stmt != null) {
-				stmt.close();
-				stmt = null;
-			}
-			if (con != null) {
-				con.close();
-				con = null;
-			}
-		} catch (SQLException s) {
-			s.printStackTrace();
-		}
-	}
-
-	// SELECT용
-	public static void close(Connection con, Statement stmt, ResultSet rset) {
-		try {
-			if (rset != null) {
-				rset.close();
-				rset = null;
-			}
-			if (stmt != null) {
-				stmt.close();
-				stmt = null;
-			}
-			if (con != null) {
-				con.close();
-				con = null;
-			}
-		} catch (SQLException s) {
-			s.printStackTrace();
-		}
+	
+	public static String getAdminPw() {
+		return admin.getProperty("admin.pw");
 	}
 }

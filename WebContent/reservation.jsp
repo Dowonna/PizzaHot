@@ -63,7 +63,7 @@
 				<c:forEach items="${requestScope.menuAll}" var="data">
 					<c:if test="${data.category=='pizza'}">
 						<h1>
-							<b><a href="#" onclick='addBasket("${data.name}",${data.price})'>${data.name}</a></b>
+							<b><a onclick='addBasket("${data.name}",${data.price})'>${data.name}</a></b>
 							<c:if test="${data.status!='none'}">
 								<span class="w3-tag w3-red w3-round">${data.status}</span>
 							</c:if>
@@ -80,7 +80,7 @@
 				<c:forEach items="${requestScope.menuAll}" var="data">
 					<c:if test="${data.category=='pasta'}">
 						<h1>
-							<b><a href="#" onclick='addBasket("${data.name}",${data.price})'>${data.name}</a></b>
+							<b><a onclick='addBasket("${data.name}",${data.price})'>${data.name}</a></b>
 							<c:if test="${data.status!='none'}">
 								<span class="w3-tag w3-red w3-round">${data.status}</span>
 							</c:if>
@@ -98,7 +98,7 @@
 				<c:forEach items="${requestScope.menuAll}" var="data">
 					<c:if test="${data.category=='starter'}">
 						<h1>
-							<b><a href="#" onclick='addBasket("${data.name}",${data.price})'>${data.name}</a></b>
+							<b><a onclick='addBasket("${data.name}",${data.price})'>${data.name}</a></b>
 							<c:if test="${data.status!='none'}">
 								<span class="w3-tag w3-red w3-round">${data.status}</span>
 							</c:if>
