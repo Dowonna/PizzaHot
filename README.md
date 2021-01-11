@@ -1,6 +1,8 @@
 # :pizza: PizzaHot
 
 PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가능한 홈페이지입니다.
+
+
 <img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/pizza_home.jpg" width="50%">
 
 
