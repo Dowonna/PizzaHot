@@ -42,8 +42,9 @@
 			<form action='Controller' name="bk" method="post">
 				<input type="hidden"  id="basketValue" name="basket">
 				<input type="hidden" name="command" value="addReservation">
+				<button onclick="toRes()" style="position: absolute; bottom: 10px; right: 5px">예약하기</button>
 			</form>
-			<button onclick="toRes()" style="position: absolute; bottom: 10px; right: 5px">예약하기</button>
+			
 		</div>
 
 
