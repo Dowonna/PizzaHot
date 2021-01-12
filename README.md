@@ -2,7 +2,7 @@
 
 PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가능한 홈페이지입니다.
 
-<img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/pizza_home.jpg" width="70%">
+<img src = "https://i.imgur.com/y8ExxXD.jpg" width="70%">
 
 ## Intruduction
 - 이탈리아 음식으로 유명한 "Pizza"! 한국에서도 대표적인 술안주로 자리매김하게 되면서 많은 피자가게가 오픈되었습니다.
