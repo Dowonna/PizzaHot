@@ -25,8 +25,7 @@
 	<div class="w3-main" style="margin-left: 100px; margin-top: 43px;">
 	
 		<%
-			Service instance = Service.getInstance();
-			request.setAttribute("menuAll", instance.getAllMenu());
+			request.setAttribute("menuAll", Service.getInstance().getAllMenu());
 		%>
 		<div id='left_banner'>
 			<table id="basket" style="font-size: 13px; border-collapse: collapse;" border="1">
