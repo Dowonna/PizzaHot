@@ -46,7 +46,12 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 | Confirm Reservation | CRUD Menu |
 | <img src = "https://i.imgur.com/iOdcuxf.gif"> | <img src = "https://i.imgur.com/2mKp5AV.gif"> |
 
-<!--[![시연영상](https://img.youtube.com/vi/l624RcGCe2M/0.jpg)](https://www.youtube.com/embed/l624RcGCe2M)-->
+## :running: TensorFlow
+
+| Order & Cancellation | Order & Reservation |
+|:------:|:------:|
+| <img src = "https://i.imgur.com/DUTOemf.gif"> | <img src = "https://i.imgur.com/Wp9nlLt.gif"> |
+
 
 ## ✍️ Author
  
