@@ -14,7 +14,7 @@
     <p>We are proud of our interiors.</p>
 
 	<div id="map" style="width:500px;height:400px;"></div>
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7866627ad49b15f17c920616f2c4551"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=insert_ur_apikey"></script>
 		<script>
 			var container = document.getElementById('map');
 			var options = {
