@@ -2,7 +2,7 @@
 
 PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가능한 홈페이지입니다.
 
-<img src = "https://github.com/Ta-Ye/PizzaHot/blob/main/WebContent/images/pizza_home.jpg" width="70%">
+<img src = "https://i.imgur.com/y8ExxXD.jpg" width="70%">
 
 ## Intruduction
 - 이탈리아 음식으로 유명한 "Pizza"! 한국에서도 대표적인 술안주로 자리매김하게 되면서 많은 피자가게가 오픈되었습니다.
@@ -26,7 +26,7 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 
 | :back: Back-End | :globe_with_meridians: Front-End | :package: Config |
 |------|---|---|
-|![tomcat](https://img.shields.io/badge/Apache%20Tomcat-v8.5.61-yellow) ![eslint](https://img.shields.io/badge/ESLint-v7.17.0-purple) ![](https://img.shields.io/badge/Oracle%20DB-SE-red) ![](https://img.shields.io/badge/JPA-v2.1-yellow) | ![Servlet](https://img.shields.io/badge/Servlet-v3.1-red) ![JSP](https://img.shields.io/badge/JSP-v2.3-red) ![node-red](https://img.shields.io/badge/Node--RED-1.2-red)|![Github](https://img.shields.io/badge/Github-%5E-lightgrey)|
+|![tomcat](https://img.shields.io/badge/Apache%20Tomcat-v8.5.61-yellow) ![eslint](https://img.shields.io/badge/ESLint-v7.17.0-purple) ![](https://img.shields.io/badge/Oracle%20DB-SE-red) ![](https://img.shields.io/badge/JPA-v2.1-yellow) | ![Servlet](https://img.shields.io/badge/Servlet-v3.1-red) ![JSP](https://img.shields.io/badge/JSP-v2.3-red) ![node-red](https://img.shields.io/badge/Node--RED-v1.2-red)|![Github](https://img.shields.io/badge/Github-Git%20bash-lightgrey)|
 
 ## 🤖 ChatBot
   - 예약 정보를 Node-Red와 Telegram 연동해서 보냈습니다.
@@ -44,9 +44,14 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
 | Reservation | Send Telegram |
 | <img src = "https://i.imgur.com/aU1JjsN.gif"> | <img src = "https://i.imgur.com/WEtK8Ny.gif"> |
 | Confirm Reservation | CRUD Menu |
-| <img src = "https://i.imgur.com/aU1JjsN.gif"> | <img src = "https://i.imgur.com/2mKp5AV.gif"> |
+| <img src = "https://i.imgur.com/iOdcuxf.gif"> | <img src = "https://i.imgur.com/2mKp5AV.gif"> |
 
-<!--[![시연영상](https://img.youtube.com/vi/l624RcGCe2M/0.jpg)](https://www.youtube.com/embed/l624RcGCe2M)-->
+## :running: TensorFlow
+
+| Order & Cancellation | Order & Reservation |
+|:------:|:------:|
+| <img src = "https://i.imgur.com/DUTOemf.gif"> | <img src = "https://i.imgur.com/Wp9nlLt.gif"> |
+
 
 ## ✍️ Author
  
@@ -60,6 +65,8 @@ PizzaHot은 가게의 위치, 판매중인 메뉴안내 및 예약기능이 가�
   - 장바구니와 메세지 보내는 로직을 같이 구현하는 과정에서 이름과 전화번호를 통한 비회원 로그인를 목표로 했습니다.
     여기서 동시 접속자에 관해서 테이블이 겹칠 수 있다는 것을 발견했습니다. 
     차후 자바스크립트를 배우고 chatbot을 node-red가 아닌 이클립스에서 구현하여 서버를 동일하게 해준다면 문제 해결이 가능할 것 같습니다.
+  - 장바구니 비동기 구현을 위해 자바로 구현한 것에서 자바스크립트로 바꿨다. 이 과정에서 자바스크립트의 배열을 자바 ArrayList로 바꾸기 위해 url에 배열 값을 전송해 변환하였다.
+  - 관리자 로그인을 하지 않은 상태에서 관리자 페이지에 접근할 수 있었다. 그래서 비로그인 상태에서 접근못하게 하기 위해 로그인 시 특정 Session을 생성하여 확인하는 과정을 추가했다.
   
 ## 참고
 테이블 내부 구성 엑셀 문서 링크
